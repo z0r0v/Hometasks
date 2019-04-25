@@ -7,11 +7,13 @@ h1 {
     width: 215px;
     text-align: center;
 }
+
 p {
     font-size: 14px;
     width: 215px;
     text-align: center;
 }
+
 input {
     padding: 10px;
     margin: 5px;
@@ -53,7 +55,8 @@ input {
     height: 20px;
     border: solid 1px rebeccapurple;
 }
-.resHere{
+
+.resHere {
     margin: 0;
     text-transform: uppercase;
 }
