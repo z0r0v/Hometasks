@@ -1,28 +1,38 @@
+.row {
+    margin: 100px;
+}
 
 h1 {
     font-size: 20px;
-    width: 200px;
+    width: 215px;
     text-align: center;
 }
 p {
     font-size: 14px;
-    width: 200px;
+    width: 215px;
     text-align: center;
 }
+input {
+    padding: 10px;
+    margin: 5px;
+}
 .btn {
-    width: 34px;
-    height: 34px;
+    width: 36px;
+    height: 36px;
     color: white;
     background: rebeccapurple;
 }
+
 .calculator {
+    text-align: center;
     display: inline-block;
     border: 2px solid rebeccapurple;
     padding: 10px;
-    text-align: center;
 }
+
 #ResCol {
-    width: 142px;
+    margin: 5px;
+    width: 179px;
     height: 20px;
 
 }
