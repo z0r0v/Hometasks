@@ -1,0 +1,29 @@
+
+
+h1 {
+    font-size: 20px;
+    width: 200px;
+    text-align: center;
+}
+p {
+    font-size: 14px;
+    width: 200px;
+    text-align: center;
+}
+.btn {
+    width: 34px;
+    height: 34px;
+    color: white;
+    background: rebeccapurple;
+}
+.calculator {
+    display: inline-block;
+    border: 2px solid rebeccapurple;
+    padding: 10px;
+    text-align: center;
+}
+#ResCol {
+    width: 142px;
+    height: 20px;
+
+}
