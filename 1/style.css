@@ -49,13 +49,6 @@ input {
     padding: 10px;
 }
 
-#ResCol {
-    margin: 5px;
-    width: 179px;
-    height: 20px;
-    border: solid 1px rebeccapurple;
-}
-
 .resHere {
     margin: 0;
     text-transform: uppercase;
