@@ -45,12 +45,14 @@ input {
 .calculator {
     text-align: center;
     display: inline-block;
-    border: 2px solid rebeccapurple;
+    border: 3px solid rebeccapurple;
     padding: 10px;
-    box-shadow: 3px 3px 5px 1px silver ;
+    box-shadow: 3px 3px 5px 1px silver;
+    border-radius: 8px;
 }
 
 .resHere {
     margin: 0;
-    text-transform: uppercase;
+    width: 150px;
+    height: auto;
 }
