@@ -9,47 +9,43 @@ function valueInp() {
     }
     return isValid;
 }
-/*Переменная в масив потом масив можно вызвать в функции*/
-    let newTextValue = function (){
-        let textValue1 = document.getElementById('incomingDataFirstField').value;
-        let textValue2 = document.getElementById('incomingDataSecondField').value;
-        return[textValue1, textValue2];
-};
+
+/*Reduce the entry of input values into the object*/
+let incomingDataFirstField = document.getElementById('incomingDataFirstField');
+
+
+/*Variable in array then array can be called in function*/
+let newTextValue = function(){
+    let textValue1 = incomingDataFirstField.value;
+    let textValue2 = incomingDataSecondField.value;
+    return[textValue1, textValue2];
+}
 
 /*Functions of the result buttons" + - * / " */
 function MyFunctionPlus() {
     if (valueInp()) {
-        let textValue =  newTextValue();
-        let textValue1 = textValue[0];
-        let textValue2 = textValue[1];
-        document.getElementById('incomingDataFirstField').value = result = parseInt(textValue1) + parseInt(textValue2);
+        let textValue = newTextValue();
+        incomingDataFirstField.value = parseInt(textValue[0]) + parseInt(textValue[1]);
     }
 }
 
 function MyFunctionSubtraction() {
     if (valueInp()) {
-        let textValue =  newTextValue();
-        let textValue1 = textValue[0];
-        let textValue2 = textValue[1];
-        document.getElementById('incomingDataFirstField').value = result = parseInt(textValue1) - parseInt(textValue2);
+        let textValue = newTextValue();
+        incomingDataFirstField.value = parseInt(textValue[0]) - parseInt(textValue[1]);
     }
 }
 
 function MyFunctionDivision() {
     if (valueInp()) {
-        let textValue =  newTextValue();
-        let textValue1 = textValue[0];
-        let textValue2 = textValue[1];
-        document.getElementById('incomingDataFirstField').value = result = (parseInt(textValue1) / parseInt(textValue2)).toFixed(2);
+        incomingDataFirstField.value = (parseInt(textValue[0]) + parseInt(textValue[1])).toFixed(2);
     }
 }
 
 function MyFunctionMultiply() {
     if (valueInp()) {
-        let textValue =  newTextValue();
-        let textValue1 = textValue[0];
-        let textValue2 = textValue[1];
-        document.getElementById('incomingDataFirstField').value = result = parseInt(textValue1) * parseInt(textValue2);
+        let textValue = newTextValue();
+        incomingDataFirstField.value = parseInt(textValue[0]) + parseInt(textValue[1]);
     }
 }
 
