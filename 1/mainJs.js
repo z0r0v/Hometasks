@@ -19,7 +19,7 @@ let newTextValue = function(){
     let textValue1 = incomingDataFirstField.value;
     let textValue2 = incomingDataSecondField.value;
     return[textValue1, textValue2];
-}
+};
 
 /*Functions of the result buttons" + - * / " */
 function MyFunctionPlus() {
@@ -52,5 +52,5 @@ function MyFunctionMultiply() {
 
 /*The buttons for the first column are collected following the example in the stack*/
 function MyFunction(value) {
-    document.getElementById('incomingDataFirstField').value += value;
+    incomingDataFirstField.value += value;
 }
