@@ -1,4 +1,4 @@
-/*Валидация*/
+/*Валидация123*/
 function valueInp() {
     let isValid;
     if (!isNaN(parseInt(document.getElementById('incomingDataFirstField').value))) {
