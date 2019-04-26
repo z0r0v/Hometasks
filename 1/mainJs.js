@@ -4,19 +4,25 @@ function valueInp() {
     if (!isNaN(parseInt(document.getElementById('incomingDataFirstField').value))) {
         isValid = true;
     } else {
-        alert('Введите число правильно');
+        alert('Enter the number correctly');
         isValid = false;
     }
     return isValid;
 }
-
-/*Функции кнопок приводящихк результатам " + - * / " */
-function MyFunctionPlus() {
-    if (valueInp()) {
+/*Переменная в масив потом масив можно вызвать в функции*/
+    let newTextValue = function (){
         let textValue1 = document.getElementById('incomingDataFirstField').value;
         let textValue2 = document.getElementById('incomingDataSecondField').value;
-        let result = parseInt(textValue1) + parseInt(textValue2);
-        document.getElementById('incomingDataFirstField').value = result;
+        return[textValue1, textValue2];
+};
+
+/*Functions of the result buttons" + - * / " */
+function MyFunctionPlus() {
+    if (valueInp()) {
+        let textValue =  newTextValue();
+        let textValue1 = textValue[0];
+        let textValue2 = textValue[1];
+        document.getElementById('incomingDataFirstField').value = result  = parseInt(textValue1) + parseInt(textValue2);
     }
 }
 
@@ -47,7 +53,7 @@ function MyFunctionMultiply() {
     }
 }
 
-/*Кнопки для первой графы собранны по примеру в стак*/
+/*The buttons for the first column are collected following the example in the stack*/
 function MyFunction(value) {
     document.getElementById('incomingDataFirstField').value += value;
 }
