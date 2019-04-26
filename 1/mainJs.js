@@ -12,7 +12,7 @@ function valueInp() {
 
 /*Reduce the entry of input values into the object*/
 let incomingDataFirstField = document.getElementById('incomingDataFirstField');
-
+let incomingDataSecondField = document.getElementById('incomingDataSecondField');
 
 /*Variable in array then array can be called in function*/
 let newTextValue = function(){
@@ -38,14 +38,15 @@ function MyFunctionSubtraction() {
 
 function MyFunctionDivision() {
     if (valueInp()) {
-        incomingDataFirstField.value = (parseInt(textValue[0]) + parseInt(textValue[1])).toFixed(2);
+        let textValue = newTextValue();
+        incomingDataFirstField.value = (parseInt(textValue[0]) / parseInt(textValue[1])).toFixed(2);
     }
 }
 
 function MyFunctionMultiply() {
     if (valueInp()) {
         let textValue = newTextValue();
-        incomingDataFirstField.value = parseInt(textValue[0]) + parseInt(textValue[1]);
+        incomingDataFirstField.value = parseInt(textValue[0]) * parseInt(textValue[1]);
     }
 }
 
