@@ -22,7 +22,7 @@ function MyFunctionPlus() {
         let textValue =  newTextValue();
         let textValue1 = textValue[0];
         let textValue2 = textValue[1];
-        document.getElementById('incomingDataFirstField').value = result  = parseInt(textValue1) + parseInt(textValue2);
+        document.getElementById('incomingDataFirstField').value = result = parseInt(textValue1) + parseInt(textValue2);
     }
 }
 
