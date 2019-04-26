@@ -21,32 +21,56 @@ let newTextValue = function(){
     return[textValue1, textValue2];
 };
 
+/*------------------- So it was before --------  ------------*/
+    /*Functions of the result buttons" + - * / "
+    function MyFunctionPlus() {
+        if (valueInp()) {
+            let textValue = newTextValue();
+            incomingDataFirstField.value = parseInt(textValue[0]) + parseInt(textValue[1]);
+        }
+    }
+
+    function MyFunctionSubtraction() {
+        if (valueInp()) {
+            let textValue = newTextValue();
+            incomingDataFirstField.value = parseInt(textValue[0]) - parseInt(textValue[1]);
+        }
+    }
+
+    function MyFunctionDivision() {
+        if (valueInp()) {
+            let textValue = newTextValue();
+            incomingDataFirstField.value = (parseInt(textValue[0]) / parseInt(textValue[1])).toFixed(2);
+        }
+    }
+
+    function MyFunctionMultiply() {
+        if (valueInp()) {
+            let textValue = newTextValue();
+            incomingDataFirstField.value = parseInt(textValue[0]) * parseInt(textValue[1]);
+        }
+    }*/
+
+/*------------------- So it became after optimization -------- */
+
 /*Functions of the result buttons" + - * / " */
-function MyFunctionPlus() {
+function Calculate(operation) {
     if (valueInp()) {
         let textValue = newTextValue();
-        incomingDataFirstField.value = parseInt(textValue[0]) + parseInt(textValue[1]);
-    }
-}
-
-function MyFunctionSubtraction() {
-    if (valueInp()) {
-        let textValue = newTextValue();
-        incomingDataFirstField.value = parseInt(textValue[0]) - parseInt(textValue[1]);
-    }
-}
-
-function MyFunctionDivision() {
-    if (valueInp()) {
-        let textValue = newTextValue();
-        incomingDataFirstField.value = (parseInt(textValue[0]) / parseInt(textValue[1])).toFixed(2);
-    }
-}
-
-function MyFunctionMultiply() {
-    if (valueInp()) {
-        let textValue = newTextValue();
-        incomingDataFirstField.value = parseInt(textValue[0]) * parseInt(textValue[1]);
+        switch (operation) {
+            case "+":
+                incomingDataFirstField.value = parseInt(textValue[0]) + parseInt(textValue[1]);
+                break;
+            case "-":
+                incomingDataFirstField.value = parseInt(textValue[0]) - parseInt(textValue[1]);
+                break;
+            case "*":
+                incomingDataFirstField.value = parseInt(textValue[0]) * parseInt(textValue[1]);
+                break;
+            case "/":
+                incomingDataFirstField.value = (parseInt(textValue[0]) / parseInt(textValue[1])).toFixed(2);
+                break;
+        }
     }
 }
 
