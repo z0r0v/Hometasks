@@ -53,7 +53,7 @@ let newTextValue = function(){
 
 /*------------------- So it became after optimization -------- */
 
-/*Functions of the result buttons" + - * / " */
+/*Functions of the result buttons" + - * / " 1*/
 function Calculate(operation) {
     if (valueInp()) {
         let textValue = newTextValue();
