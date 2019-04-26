@@ -28,28 +28,28 @@ function MyFunctionPlus() {
 
 function MyFunctionSubtraction() {
     if (valueInp()) {
-        let textValue1 = document.getElementById('incomingDataFirstField').value;
-        let textValue2 = document.getElementById('incomingDataSecondField').value;
-        let result = parseInt(textValue1) - parseInt(textValue2);
-        document.getElementById('incomingDataFirstField').value = result;
+        let textValue =  newTextValue();
+        let textValue1 = textValue[0];
+        let textValue2 = textValue[1];
+        document.getElementById('incomingDataFirstField').value = result = parseInt(textValue1) - parseInt(textValue2);
     }
 }
 
 function MyFunctionDivision() {
     if (valueInp()) {
-        let textValue1 = document.getElementById('incomingDataFirstField').value;
-        let textValue2 = document.getElementById('incomingDataSecondField').value;
-        let result = parseInt(textValue1) / parseInt(textValue2);
-        document.getElementById('incomingDataFirstField').value = result.toFixed(2);
+        let textValue =  newTextValue();
+        let textValue1 = textValue[0];
+        let textValue2 = textValue[1];
+        document.getElementById('incomingDataFirstField').value = result = (parseInt(textValue1) / parseInt(textValue2)).toFixed(2);
     }
 }
 
 function MyFunctionMultiply() {
     if (valueInp()) {
-        let textValue1 = document.getElementById('incomingDataFirstField').value;
-        let textValue2 = document.getElementById('incomingDataSecondField').value;
-        let result = parseInt(textValue1) * parseInt(textValue2);
-        document.getElementById('incomingDataFirstField').value = result;
+        let textValue =  newTextValue();
+        let textValue1 = textValue[0];
+        let textValue2 = textValue[1];
+        document.getElementById('incomingDataFirstField').value = result = parseInt(textValue1) * parseInt(textValue2);
     }
 }
 
