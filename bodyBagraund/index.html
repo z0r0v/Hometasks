@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang = "en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>bgCol</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<script src="mainJs.js"></script>
+<div class="row">
+<h2>Enter the color you want in the body<br />(task number 1)</h2> <br />
+<input class="inColor" type="text" placeholder="Enter color like 'Coral'" /><br />
+<input type="button" class="btn" value="apply" onclick="cheColor()" /><br />
+</div>
+<div class="row">
+<h2>Choose a color from the list:<br />(task number 2)</h2>
+<form name="">
+    <br>
+    <select class="myList">
+        <option>White</option>
+        <option>AliceBlue</option>
+        <option>Azure</option>
+        <option>Chartreuse</option>
+        <option>Cornsilk</option>
+        <option>Cyan</option>
+        <option>GhostWhite</option>
+    </select><br />
+    <input type="button" class="btn" value="apply" onclick="listSelect()" />
+</form>
+</div>
+<div class="row">
+    <h2>Choose a color from the list:<br />(task number 2)</h2>
+    <form name="">
+        <br>
+        <select class="myListClass">
+            <option>White</option>
+            <option>AliceBlue</option>
+            <option>Azure</option>
+            <option>Chartreuse</option>
+            <option>Cornsilk</option>
+            <option>Cyan</option>
+            <option>GhostWhite</option>
+        </select><br />
+        <input type="button" class="btn" value="apply" onclick="myListClass()" />
+    </form>
+</div>
+</body>
+</html>
