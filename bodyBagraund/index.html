@@ -10,42 +10,45 @@
 </head>
 <body>
 <script src="mainJs.js"></script>
-<div class="row">
-<h2>Enter the color you want in the body<br />(task number 1)</h2> <br />
-<input class="inColor" type="text" placeholder="Enter color like 'Coral'" /><br />
-<input type="button" class="btn" value="apply" onclick="cheColor()" /><br />
-</div>
-<div class="row">
-<h2>Choose a color from the list:<br />(task number 2)</h2>
-<form name="">
-    <br>
-    <select class="myList">
-        <option>White</option>
-        <option>AliceBlue</option>
-        <option>Azure</option>
-        <option>Chartreuse</option>
-        <option>Cornsilk</option>
-        <option>Cyan</option>
-        <option>GhostWhite</option>
-    </select><br />
-    <input type="button" class="btn" value="apply" onclick="listSelect()" />
-</form>
-</div>
-<div class="row">
-    <h2>Choose a color from the list:<br />(task number 2)</h2>
-    <form name="">
-        <br>
-        <select class="myListClass">
-            <option>White</option>
-            <option>AliceBlue</option>
-            <option>Azure</option>
-            <option>Chartreuse</option>
-            <option>Cornsilk</option>
-            <option>Cyan</option>
-            <option>GhostWhite</option>
-        </select><br />
-        <input type="button" class="btn" value="apply" onclick="myListClass()" />
-    </form>
+<div class="rowFather">
+    <img class="resHere" alt="Logotip" src="img/logoZhorov.jpg" /><br />
+    <h1>Here you can choose the corporate color of your site.</h1>
+    <div class="row">
+        <h2 class="textChoose">Enter the color you want in the body<br />(task number 1)</h2> <br />
+        <input class="inColor" type="text" placeholder="Enter color like 'Coral'" /><br />
+        <input type="button" class="btn" value="apply" onclick="cheColor()" /><br />
+    </div>
+    <div class="row">
+        <h2 class="textChoose">Choose a color from the list:<br />(task number 2)</h2>
+        <form name="">
+            <select class="myList">
+                <option>White</option>
+                <option>AliceBlue</option>
+                <option>Azure</option>
+                <option>Chartreuse</option>
+                <option>Cornsilk</option>
+                <option>Cyan</option>
+                <option>GhostWhite</option>
+            </select><br />
+            <input type="button" class="btn" value="apply" onclick="listSelect()" />
+        </form>
+    </div>
+    <div class="row">
+        <h2 class="textChoose">Choose a color from the list:<br />(task number 3)</h2>
+        <form name="">
+            <select class="myListClass">
+                <option>White</option>
+                <option>AliceBlue</option>
+                <option>Azure</option>
+                <option>Chartreuse</option>
+                <option>Cornsilk</option>
+                <option>Cyan</option>
+                <option>GhostWhite</option>
+            </select><br />
+            <input type="button" class="btn" value="apply" onclick="myListClass()" />
+        </form>
+    </div>
+    <p>Do you want to support this project click here: <a href="#">AlexProdaction</a></p>
 </div>
 </body>
 </html>
