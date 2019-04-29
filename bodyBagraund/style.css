@@ -1,6 +1,5 @@
 body {
     /*color replacement via css*/
-    color: var(--main-color);
     background-color: var(--main-color);
 }
 
@@ -32,6 +31,14 @@ body {
     margin-left: 20px;
     border: 7px ridge rebeccapurple;
 }
+@media(max-width: 588px) {
+    .rowFather {
+        margin: 0;
+    }
+}
+
+
+
 .row {
     margin: 20px auto;
     text-align: center;
@@ -41,6 +48,7 @@ body {
     box-shadow: 3px 3px 5px 1px silver;
     border-radius: 3px;
 }
+
 .row:hover {
     box-shadow: 6px 6px 10px 2px silver;
 }
@@ -93,4 +101,36 @@ p {
 }
 h1 {
     text-align: center;
+}
+
+@media(max-width: 550px) {
+    img {
+        display: block;
+        width:272px;
+        padding: 10px 0;
+        margin: 0 auto;
+    }
+    h1 {
+        margin: 0 auto;
+        width:272px;
+        font-size: 18px;
+        padding-bottom: 10px;
+    }
+    h2{
+        font-size: 16px;
+    }
+    p {
+        padding-top: 15px;
+        font-size: 14px;
+        margin: 0 auto;
+        width:272px;
+    }
+    .row{
+        margin: 0 auto;
+        width: 250px;
+    }
+    .rowFather {
+        width: 300px;
+        height: 820px;
+    }
 }
