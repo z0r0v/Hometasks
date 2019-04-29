@@ -47,6 +47,7 @@ body {
     width: 400px;
     box-shadow: 3px 3px 5px 1px silver;
     border-radius: 3px;
+    background-color: white;
 }
 
 .row:hover {
@@ -130,7 +131,7 @@ h1 {
         width: 250px;
     }
     .rowFather {
-        width: 300px;
+        width: 290px;
         height: 820px;
     }
 }
