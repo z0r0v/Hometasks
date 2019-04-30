@@ -27,7 +27,7 @@ body {
     background-color:GhostWhite;
 }
 .rowFather {
-    height: 1050px;
+    height: 1170px;
     width: 522px;
     margin-top: 100px;
     margin-left: 20px;
@@ -126,11 +126,11 @@ h1 {
         width:272px;
     }
     .row{
-        margin: 0 auto;
+        margin: 2px auto;
         width: 250px;
     }
     .rowFather {
         width: 290px;
-        height: 820px;
+        height: 940px;
     }
 }
