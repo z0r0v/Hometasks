@@ -31,6 +31,5 @@ function applyColor(){
 function myListChangeThis(selectElement){
     bgNul=null;/*reset style value*/
     clanNameNul=null;/*reset class value*/
-    selectElement = document.querySelector('.myListChangeThis');
     document.body.style.setProperty('--main-color', selectElement.value);
 }
