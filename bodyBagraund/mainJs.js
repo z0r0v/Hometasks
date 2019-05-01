@@ -47,6 +47,7 @@ function applyColor(){
 }
 
 /*№5 here I change the class for the body element in CSS no Button*/
+/*При помощи this можно сократить запись не обращаясь к document.querySelector а на прямую.*/
 function myListChangeThis(selectElement){
     bgStlNul();
     dBs.setProperty('--main-color', selectElement.value);
