@@ -1,4 +1,6 @@
-let audience = {
+let audience57 = {};
+
+let charAud = {
     ceilingHeight: "2.5m",
     roomLength: "5m",
     roomWidth: "5m",
@@ -47,14 +49,14 @@ let videoCard ={
     cooling:"active",
 };
 
-
-audience.audWindow = audWindow;
-audience.door = door;
-audience.projector = projector;
-audience.table = table;
-audience.sensei = sensei;
+audience57.charAud = charAud;
+audience57.audWindow = audWindow;
+audience57.door = door;
+audience57.projector = projector;
+audience57.table = table;
+audience57.sensei = sensei;
 computer.videoCard = videoCard;
-audience.computer =computer;
+audience57.computer =computer;
+console.log(audience57);
 
 
-console.log(audience);
