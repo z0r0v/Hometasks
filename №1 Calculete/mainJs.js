@@ -26,34 +26,34 @@ let newTextValue = function(){
     function MyFunctionPlus() {
         if (valueInp()) {
             let textValue = newTextValue();
-            incomingDataFirstField.value = parseInt(textValue[0]) + parseInt(textValue[1]);
+            incomingDataFirstField.value = parseInt(textValue[0]) + parseInt(textValue[№1 Calculete]);
         }
     }
 
     function MyFunctionSubtraction() {
         if (valueInp()) {
             let textValue = newTextValue();
-            incomingDataFirstField.value = parseInt(textValue[0]) - parseInt(textValue[1]);
+            incomingDataFirstField.value = parseInt(textValue[0]) - parseInt(textValue[№1 Calculete]);
         }
     }
 
     function MyFunctionDivision() {
         if (valueInp()) {
             let textValue = newTextValue();
-            incomingDataFirstField.value = (parseInt(textValue[0]) / parseInt(textValue[1])).toFixed(2);
+            incomingDataFirstField.value = (parseInt(textValue[0]) / parseInt(textValue[№1 Calculete])).toFixed(2);
         }
     }
 
     function MyFunctionMultiply() {
         if (valueInp()) {
             let textValue = newTextValue();
-            incomingDataFirstField.value = parseInt(textValue[0]) * parseInt(textValue[1]);
+            incomingDataFirstField.value = parseInt(textValue[0]) * parseInt(textValue[№1 Calculete]);
         }
     }*/
 
 /*------------------- So it became after optimization -------- */
 
-/*Functions of the result buttons" + - * / " 1*/
+/*Functions of the result buttons" + - * / " №1 Calculete*/
 function Calculate(operation) {
     if (valueInp()) {
         let textValue = newTextValue();

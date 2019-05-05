@@ -18,7 +18,7 @@ function bgStlNul() {
 let dB = document.body;
 let dBs = dB.style;
 
-/*№1 here I change the style through slim body in the document get into classes*/
+/*№№1 Calculete here I change the style through slim body in the document get into classes*/
 function cheColor() {
     bgStlNul();
     let newColor = document.querySelector(".inColor");
@@ -32,7 +32,7 @@ function listSelect(){
     dBs.backgroundColor = myListValue.value;
 }
 
-/*№3 here I change the class for the body element and the classes are written in CSS*/
+/*№3 questioning here I change the class for the body element and the classes are written in CSS*/
 function myListClass(){
     bgStlNul();
     let myListValueClass = document.querySelector('.myListClass');
