@@ -33,6 +33,7 @@ function addButtonClicked() {
   // 1.2. Если же такое название цвета существует, вызывает checkIfColorAdded, чтобы проверить наличие добавляемого цвета выпадающем списке.
   // 1.2.1. Если выпадающий список еще не содержит добавляемое значение, последовательно вызывает функции addColor, chooseColor и setColor, передавая им в качестве входного параметра значение, которое пользователь ввел в текстовое поле.
   // 1.2.2. Если значение уже добавлено, показывает сообщение 'Color has been already added'
+    debugger;
     let colorCanBeAdded = checkIfColorCanBeAdded();
     if(colorCanBeAdded === true){
         let colorAdded = checkIfColorAdded();
@@ -104,8 +105,8 @@ function addColor(color) {
   // 1. Создает новый HTML элмент option через new Option (https://developer.mozilla.org/en-US/docs/Web/API/HTMLOptionElement/Option)
   // 2. Вызывает appendChild (https://mzl.la/2J1CTEo) на выпадающем списке, указывая созданный элмент option в качестве входящего параметра
   // 3. Вызывает функцию reset
-    let optionElementReference = new Option();
-    htmlElements.selectColor.appendChild(optionElementReference);
+    let newOption = new Option(color);
+    htmlElements.selectColor.appendChild(newOption);
     reset();
 }
 
