@@ -153,7 +153,8 @@ function reset() {
   // 1. Устанавливает значение текстового поля в ''
   // 2. Удаляет CSS переменную --color на body
     htmlElements.input.value = '';
-    htmlElements.body.style.setProperty('--color', null);
+    document.body.style.removeProperty('--color');
+
 }
 
 function checkIfColorCanBeAdded(color) {
