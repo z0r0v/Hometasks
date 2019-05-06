@@ -34,7 +34,7 @@ function addButtonClicked() {
   // 1.2.1. Если выпадающий список еще не содержит добавляемое значение, последовательно вызывает функции addColor, chooseColor и setColor, передавая им в качестве входного параметра значение, которое пользователь ввел в текстовое поле.
   // 1.2.2. Если значение уже добавлено, показывает сообщение 'Color has been already added'
     checkIfColorCanBeAdded();
-    if(color.indexOf('rgb') > -1 || color === ''){
+    if(Что должно прити суда не знаю){
         checkIfColorAdded();
         if(checkIfColorAdded.value === true){
             alert('Color has been already added');
