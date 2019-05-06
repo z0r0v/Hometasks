@@ -24,7 +24,7 @@ initEvenHandles();
 
 function selectColorValueChanged() {
   // 1. Вызывает setColor, передает знчение выпадающего списка в качестве входного параметра
-    htmlElements.selectColor();
+    setColor(htmlElements.selectColor);
 
 }
 
@@ -55,12 +55,25 @@ function removeColorClicked() {
   // 1. Проверяет, ввел ли пользователь какой-то текст в текстовое поле
   // 1.1. Если не ввел, показывает сообщение 'Please enter a value first'
   // 1.2. Если ввел, вызвает removeColor, передавая значение текстового поля в качестве входного параметра. После чего вызывает reset.
+    htmlElements.input();
+    if(htmlElements.input === ""){
+      alert("'Please enter a value first'");
+    }
+    else{
+        removeColor(color);
+    }
 }
 
 function removeSelectedColorClicked() {
   // 1. Вызывает getSelectedValue, чтобы получить значение выбранного option в выпадающем списке.
   // 1.1. Если значение выбранного option равно 'not selected', показывает сообщение 'Please choose a value to remove'.
   // 1.2. Если же значение выбранного option не равно 'not selected', вызывает removeColor, передавая значение выбранного option в качестве входного параметра.
+    getSelectedValue();
+    if(selectedIdx === 'not selected'){
+        alert('Please choose a value to remove')
+    }
+    else {removeColor(selectedIdx);
+    }
 }
 
 function getSelectedValue() {
@@ -100,6 +113,7 @@ function setSelectedIndex(idx) {
 
 function setColor(color) {
   // меняет цвет у body через CSS переменную --color
+    document.body.style.setProperty('--color', color.value);
 }
 
 function removeColor(color) {

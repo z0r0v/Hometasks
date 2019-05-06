@@ -1,3 +1,6 @@
+:root{
+  --color:wite;
+}
 body {
   background-color: var(--color);
 }
