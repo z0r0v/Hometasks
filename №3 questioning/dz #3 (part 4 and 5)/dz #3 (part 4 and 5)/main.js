@@ -117,8 +117,6 @@ function chooseColor(color) {
     if (colorAdded === true) {
         for (let i = 1; i < htmlElements.selectColor.length; i++) {
             if (htmlElements.selectColor[i].value === color) {
-                htmlElements.selectColor.removeChild(htmlElements.selectColor[i]);
-                htmlElements.selectColor.selectedIndex = 0;
             }
             setSelectedIndex(i);
         }
