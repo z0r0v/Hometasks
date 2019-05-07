@@ -86,8 +86,7 @@ function getSelectedValue() {
 function getHTMLElement(selector) {
   // 1. находит HTML элемент по селектору
   // 2. возвращает найденный HTML элемент
-    let element = document.querySelector(selector);
-    return element;
+    return document.querySelector(selector);
 }
 
 function checkIfColorAdded(color) {
@@ -164,6 +163,5 @@ function checkIfColorCanBeAdded(color) {
 
   let div = document.createElement('div');
   div.style.backgroundColor = color;
-  let colorIsSetCorrectly = div.style.backgroundColor === color;
-  return colorIsSetCorrectly;
+  return div.style.backgroundColor === color;
 }
