@@ -67,14 +67,13 @@ function removeColorClicked() {
 function removeSelectedColorClicked() {
   // 1. Вызывает getSelectedValue, чтобы получить значение выбранного option в выпадающем списке.
   // 1.1. Если значение выбранного option равно 'not selected', показывает сообщение 'Please choose a value to remove'.
-  // 1.2. Если же значение выбранного option не равно 'not selected', вызывает removeColor, передавая значение выбранного option в качестве входного параметра.
-    debugger;
-    let getSelectedValue = getSelectedValue();
-    if(getSelectedValue === 'not selected'){
+  // 1.2. Если же значение выбранного option не равно 'not selected', вызывает removeColor, передавая значение выбранного option в качестве входного параметра.getSelectedValue(value);
+    let selectedValue = getSelectedValue();
+    if(selectedValue === 'not selected'){
       alert('Please choose a value to remove');
     }
     else{
-        removeColor(value);
+        removeColor(selectedValue);
     }
 }
 
