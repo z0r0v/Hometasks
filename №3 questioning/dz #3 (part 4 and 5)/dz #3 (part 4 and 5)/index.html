@@ -8,16 +8,21 @@
     <link rel="stylesheet" href="main.css" />
   </head>
   <body>
-    <input type="text" placeholder="enter new color here" class="input-color" />
-    <button class="add-button">Add</button>
-    <button class="remove-button">Remove</button>
-    <br />
-    <br />
-    <select>
-      <option disabled selected value="not selected">-- Select a value --</option>
-      <option value="blue">blue</option>
-    </select>
-    <button class="remove-selected">Remove selected</button>
-    <script src="main.js"></script>
+  <div class="rowFather">
+    <img src="img/logoZhorov.png" alt="Logo" class="Logo"><br />
+    <div class="row">
+      <input class="selectSize" type="text" placeholder="Enter new color here" class="input-color" /><br/>
+      <button class="add-button btn">Add</button>
+      <button class="remove-button btn">Remove</button>
+      <br />
+      <br />
+      <select class="selectSize">
+        <option disabled selected value="not selected">-- Select a value --</option>
+        <option value="blue">blue</option>
+      </select><br/>
+      <button class="remove-selected btn btnDown">Remove selected</button>
+      <script src="main.js"></script>
+    </div>
+  </div>
   </body>
 </html>
