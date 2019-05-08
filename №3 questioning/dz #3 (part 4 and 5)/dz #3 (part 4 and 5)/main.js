@@ -68,9 +68,9 @@ function removeSelectedColorClicked() {
   // 1. Вызывает getSelectedValue, чтобы получить значение выбранного option в выпадающем списке.
   // 1.1. Если значение выбранного option равно 'not selected', показывает сообщение 'Please choose a value to remove'.
   // 1.2. Если же значение выбранного option не равно 'not selected', вызывает removeColor, передавая значение выбранного option в качестве входного параметра.
-    getSelectedValue();
-    let value = htmlElements.selectColor[selectedIdx].value;
-    if(value === 'not selected'){
+    debugger;
+    let getSelectedValue = getSelectedValue();
+    if(getSelectedValue === 'not selected'){
       alert('Please choose a value to remove');
     }
     else{
@@ -103,7 +103,6 @@ function addColor(color) {
   // 1. Создает новый HTML элмент option через new Option (https://developer.mozilla.org/en-US/docs/Web/API/HTMLOptionElement/Option)
   // 2. Вызывает appendChild (https://mzl.la/2J1CTEo) на выпадающем списке, указывая созданный элмент option в качестве входящего параметра
   // 3. Вызывает функцию reset
-    debugger;
     let newOption = new Option(color);
     htmlElements.selectColor.appendChild(newOption);
     reset();
