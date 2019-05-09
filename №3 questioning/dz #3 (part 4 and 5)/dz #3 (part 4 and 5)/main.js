@@ -72,7 +72,6 @@ function removeSelectedColorClicked() {
     let selectedValue = getSelectedValue();
     if(selectedValue === 'not selected'){
       alert('Please choose a value to remove');
-        reset();
     }
     else{
         removeColor(selectedValue);
