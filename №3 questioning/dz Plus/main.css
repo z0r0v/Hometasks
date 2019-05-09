@@ -1,0 +1,12 @@
+
+.rowFather {
+  margin-top: 100px;
+  margin-left: 20px;
+}
+.row {
+  margin: 20px auto;
+  text-align: center;
+}
+h1 {
+  cursor: pointer;
+}
