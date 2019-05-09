@@ -1,4 +1,6 @@
-
+*{
+  color: rebeccapurple;
+}
 .rowFather {
   margin-top: 100px;
   margin-left: 20px;
@@ -7,6 +9,45 @@
   margin: 20px auto;
   text-align: center;
 }
+a {
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight:400px;
+  color: black;
+}
 h1 {
+  width: 587px;
   cursor: pointer;
+}
+.Logo {
+  width: 587px;
+  margin: 0 auto;
+}
+p {
+  font-size: 18px;
+  margin: 0 auto;
+}
+.Pink{
+  background-color: Pink;
+  color: white;
+}
+.LightPink{
+  background-color: LightPink;
+  color: white;
+}
+.HotPink{
+  background-color: HotPink ;
+  color: white;
+}
+.DeepPink{
+  background-color: DeepPink;
+  color: white;
+}
+.MediumVioletRed{
+  background-color: MediumVioletRed ;
+  color: white;
+}
+.PaleVioletRed{
+  background-color: PaleVioletRed;
+  color: white;
 }
