@@ -61,7 +61,7 @@ function removeColorClicked() {
   }
   else {
       removeColor(value);
-      reset();
+          reset();
   }
 }
 
