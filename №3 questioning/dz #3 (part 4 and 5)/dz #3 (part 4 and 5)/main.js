@@ -36,7 +36,7 @@ function addButtonClicked() {
     let value = htmlElements.input.value;
     let colorCanBeAdded = checkIfColorCanBeAdded(value);
     if(colorCanBeAdded === true){
-        let colorAdded = checkIfColorAdded();
+        let colorAdded = checkIfColorAdded(value);
         if(colorAdded === true){
             alert('Color has been already added');
         }
@@ -56,11 +56,12 @@ function removeColorClicked() {
   // 1.1. Если не ввел, показывает сообщение 'Please enter a value first'
   // 1.2. Если ввел, вызвает removeColor, передавая значение текстового поля в качестве входного параметра. После чего вызывает reset.
   let value = htmlElements.input.value;
-  if(value === null){
+  if(value === ""){
     alert('Please enter a value first');
   }
   else {
       removeColor(value);
+      reset();
   }
 }
 
@@ -71,9 +72,11 @@ function removeSelectedColorClicked() {
     let selectedValue = getSelectedValue();
     if(selectedValue === 'not selected'){
       alert('Please choose a value to remove');
+        reset();
     }
     else{
         removeColor(selectedValue);
+        reset();
     }
 }
 
