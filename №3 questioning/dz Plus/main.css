@@ -12,9 +12,12 @@
 a {
   font-size: 20px;
   text-transform: uppercase;
-  font-weight:400px;
+  font-weight:400;
   color: black;
+  margin: 0 auto;
+  width: 578px;
 }
+
 h1 {
   width: 587px;
   cursor: pointer;
