@@ -16,9 +16,18 @@ function initEvenHandles() {
 initHTMLElements();
 initEvenHandles();
 
+
 function matFunction() {
-let value = Math.floor(Math.random() * 6);
-console.log(value);
+
+
+    let exists = [],value, randomNumber, max = 5;
+for(let l = 0; l < max; l++) {
+    do {
+        randomNumber = Math.floor(Math.random() * max);
+    } while (exists[randomNumber]);
+    exists[randomNumber] = true;
+    value = randomNumber;
+}
 
     switch (value) {
         case 0:
