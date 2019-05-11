@@ -1,3 +1,9 @@
+:root{
+  --color:white;
+}
+body {
+  background-color: var(--color);
+}
 *{
   color: rebeccapurple;
 }
@@ -32,25 +38,19 @@ p {
 }
 .Pink{
   background-color: Pink;
-  color: white;
 }
 .LightPink{
   background-color: LightPink;
-  color: white;
 }
 .HotPink{
   background-color: HotPink ;
-  color: white;
 }
 .DeepPink{
   background-color: DeepPink;
-  color: white;
 }
 .MediumVioletRed{
   background-color: MediumVioletRed ;
-  color: white;
 }
 .PaleVioletRed{
   background-color: PaleVioletRed;
-  color: white;
 }
