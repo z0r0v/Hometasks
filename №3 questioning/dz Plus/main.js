@@ -16,7 +16,7 @@ function initEvenHandles() {
 initHTMLElements();
 initEvenHandles();
 
-/*Функция выдающая рандомные значения для value*/
+/*Функция выдающая рандомные значения из масива*/
 let myArray = ["Pink", "LightPink", "HotPink", "DeepPink","MediumVioletRed", "PaleVioletRed"];
 function getRandomValue(arr, max) {
     return arr[Math.floor(Math.random() * arr.length)];
