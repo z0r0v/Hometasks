@@ -37,7 +37,7 @@ function matFunction() {
 
     function textColorSnapColorCheimg() {
         htmlElements.span.style.color = "white";
-        htmlElements.img.src = "img/logoZhorovWhite.png";
+        htmlElements.img.src = "http://svdsecurity.by/alexFiles/logo/logoZhorovWhite.png";
         htmlElements.p.style.color = "white";
     }
 
