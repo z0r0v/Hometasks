@@ -45,22 +45,9 @@ function divColor (color, bgColor){
 }
 
 function render() {
-    divColor(todos[0].color,todos[0].bgColor);
-    divColor(todos[1].color,todos[1].bgColor);
-    divColor(todos[2].color,todos[2].bgColor);
-}
-
-/*Это ждет своего звездного часа*/
-/*function a(){
     for (let i = 0; i < todos.length; i++) {
-        console.log(todos[i].color);
+        divColor(todos[i].color, todos[i].bgColor);
     }
-}*/
-
-
-
-
-
-
+}
 
 
