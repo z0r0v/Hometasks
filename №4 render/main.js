@@ -24,10 +24,7 @@ function init() {
 
 init();
 
-function render() {
-
-/*I know how to make a designer and I did it in DivColor*/
-    function DivColor (color, bgColor){
+function divColor (color, bgColor){
     let newDeleteButton = document.createElement('button');
     newDeleteButton.classList.add("delete-button");
     newDeleteButton.color = color;
@@ -45,11 +42,12 @@ function render() {
     newTodo.appendChild(newTodoText);
     newTodo.appendChild(newDeleteButton);
     htmlElements.todos.appendChild(newTodo);
-    }
+}
 
-    DivColor(todos[0].color,todos[0].bgColor);
-    new DivColor(todos[1].color,todos[1].bgColor);
-    new DivColor(todos[2].color,todos[2].bgColor);
+function render() {
+    divColor(todos[0].color,todos[0].bgColor);
+    divColor(todos[1].color,todos[1].bgColor);
+    divColor(todos[2].color,todos[2].bgColor);
 }
 
 /*Это ждет своего звездного часа*/
