@@ -29,6 +29,8 @@ function divColor (color, bgColor){
     newDeleteButton.classList.add("delete-button");
     newDeleteButton.color = color;
     newDeleteButton.innerText = "X";
+    newDeleteButton.addEventListener('click', closedDivelement);
+
 
     let newTodoText = document.createElement('span');
     newTodoText.classList.add("todo-text");
@@ -50,4 +52,17 @@ function render() {
     }
 }
 
+function closedDivelement(eventChenColorBg){
+  eventChenColorBg.stopPropagation();
+  let item = this.parentElement;
+  const itemElements = item.parentElement;
+  const itemArray = Array.from(itemElements.querySelector('div.todo'));
+  let index = itemArray.indexOf(item);
+  items.splice(index, 1);
+  render();
+}
 
+// сброс селектет
+// тут перебор масива
+// i[i].selectet = folse;
+// 12312341212313
