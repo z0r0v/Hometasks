@@ -65,4 +65,4 @@ function closedDivelement(eventChenColorBg){
 // сброс селектет
 // тут перебор масива
 // i[i].selectet = folse;
-// 1231234121231343532
+// 1231234121231343532fktr345
