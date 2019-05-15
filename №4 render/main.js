@@ -52,7 +52,8 @@ function render() {
     }
 }
 
-function closedDivelement(eventChenColorBg){
+// Вешаем на кнопку делит
+function closedDivElement(eventChenColorBg){
   eventChenColorBg.stopPropagation();
   let item = this.parentElement;
   const itemElements = item.parentElement;
@@ -62,7 +63,12 @@ function closedDivelement(eventChenColorBg){
   render();
 }
 
-// сброс селектет
+// Функция которая делает сброс селектета
 // тут перебор масива
 // i[i].selectet = folse;
-// 1231234121231343532fktr34532
+// Функция добовляет селект масиву и меняет его бордер на боржер цвета текста
+// После этого всего рендер
+
+// Попросить доп задание !!!!
+
+
