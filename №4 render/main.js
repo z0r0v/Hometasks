@@ -60,10 +60,23 @@ function render() {
 console.log(htmlElements.heloWorldText.style);
 /* Добавляет бордер к выбранному елементу и красит баграунд в цвет */
 function addBorderColorBg() {
+  reset();
+  // Тут подбор индекса масива будет
   htmlElements.body.style.backgroundColor = todos[0].bgColor;
   htmlElements.heloWorldText.style.color = "red";
-  
+  todos[0].select = true;/* Временно нулевой елемент */
+
+
+/* Функция которая если тру выдает бордер */
+function border(color){
+  if(todos[0].select === true){
+    htmlElements.newTodo.style.border = color, "1px solid";
+  }
+  }
+  border("red");
 };
+
+
 
 
 
@@ -71,23 +84,26 @@ function addBorderColorBg() {
 function reset(){
   htmlElements.bgColorInput.value = "";
   htmlElements.textColorInput.value = "";
+
+
 }
 
 /* Функция выбора елемента созданного масива соответствующего нашему */
 function checElemenMasev(){
 // суда хочу вынести поиск елемнта масива
-}
-
-// Вешаем на кнопку делит РАБОТАЕТ НЕ ПРАВИЛЬНО
-function deletteButtonCkicked(event) {
-event.stopPropagation()
 let item = this.parentElement;
 const itemElements = item.parentElement;
 let nodeArray = itemElements.querySelector('div.item');
 const itemArray = Array.from(nodeArray);
 let index = itemArray.indexOf(item);
 item.splice(index, 1);
-render();
+}
+
+// Вешаем на кнопку делит РАБОТАЕТ НЕ ПРАВИЛЬНО
+function deletteButtonCkicked(event) {
+event.stopPropagation();
+checElemenMasev();/* Вызываю выбор елемента масива */
+render();/* Отрисовываю обьек */
 }
 
 
