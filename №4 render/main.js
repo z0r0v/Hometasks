@@ -53,7 +53,12 @@ function divColor(color, bgColor) {
   htmlElements.items.appendChild(newItem);
 }
 
+
 function render() {
+  if(htmlElements.items.childNodes.length){/* 0 это фелс а цифры это тру */
+    htmlElements.items.innerHTML = null;/* Обнуляем DIV - ки если не равна нолю */
+  }
+
   for (let i = 0; i < items.length; i++) {
     divColor(items[i].color, items[i].bgColor);
   }
@@ -65,60 +70,43 @@ function newItemClicked(){
     items[i].selected = false;
   }
 
-  let itemSpan = this.parentElement;
-  const itemElement = itemSpan.parentElement;
-  /* Тут не ищет елемент */
-  const itemitemSpanArray = Array.from(itemElement.document.querySelector('dip.item'));
-  let index = itemitemSpanArray.indexOf(itemSpan);
+  const newItem = this.parentElement;
+  const elementCollection = newItem.childNodes;
+  const newItemArray = Array.from(elementCollection);
+  let index = newItemArray.indexOf(this);/* Читать про this */
+  console.log(newItemArray);
   items[index].selected = true;
 
-  if (items[index].selected === true) {
-    htmlElements.item.classList.add('selected');
-    htmlElements.body.style.backgroundColor = items[index].bgColor;
-    htmlElements.heloWorldText.style.color = items[index].Color;
+  function addBgBorder() {
+    if (items[index].selected === true) {
+      for (let i = 0; i < newItemArray.length; i++){
+        newItemArray[i].classList.remove('selected');
+      }
+
+      newItemArray[index].classList.add('selected');
+      htmlElements.body.style.backgroundColor = items[index].bgColor;
+      htmlElements.heloWorldText.style.color = items[index].color;
+    }
+   }
+
+  addBgBorder();
+}
+
+
+  function resset(){
+    htmlElements.bgColorInput.value = '';
+    htmlElements.textColorInput.velue = '';
   }
 
-  render();
-}
-
-
-
-function reset(){
-htmlElements.bgColorInput.value = '';
-htmlElements.textColorInput.velue = '';
-}
 
 function deletteButtonCkicked(evt) {
   evt.stopPropagation();
   let item = this.parentElement;
   const itemElement = item.parentElement;
-  const itemArray = Array.from(itemElement.querySelector('div.item'));
+  const itemArray = Array.from(itemElement.querySelectorAll('div.item'));
   let index = itemArray.indexOf(item);
+  console.log(index);
   items.splice(index, 1);/* splice умеет и добавлять и удалять елементы(удаляет елемент с индексом) */
- /* Тут нужен ресет */
+  /* Тут нужен ресет */
   render();
 }
-
-
-
-// Функция которая делает сброс селектета
-// тут перебор масива
-// i[i].selectet = folse;
-
-// Функция добовляет селект масиву и меняет его бордер на боржер цвета текста
-// После этого всего рендер
-
-// Попросить доп задание !!!!
-/*  
-Часть 1
-В примере из дз 4.2. Реализовать удаление элементов из списка по нажатию на ‘X’
-Часть 2
-В примере из дз 4.2. Реализовать выделение элемента при клике на div class=”item”. 
-При этом фон и цвет текста заголовка принимают значения цвета текста и фона выбранного 
-div class=”item”
-
-Часть 3 + -"Это задание"
-Подготовить портфолио в codepen с нумерацией, соответствующей нумерации заданий ДЗ
-Дедлайн
-17 мая 18:00
-*/
