@@ -36,11 +36,11 @@ button.add-button {
     'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-div.todos {
+div.items {
   text-align: left;
 }
 
-div.todos > div.todo {
+div.items > div.item {
   margin-top: 5px;
   padding: 10px;
   position: relative;
@@ -48,11 +48,11 @@ div.todos > div.todo {
   font-weight: 500;
 }
 
-div.todos > div.todo.selected {
+div.items > div.item.selected {
   border: 2px solid black;
 }
 
-div.todos > div.todo button.delete-button {
+div.items > div.item button.delete-button {
   text-decoration: none;
   border: none;
   background: white;

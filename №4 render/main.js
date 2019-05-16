@@ -1,5 +1,5 @@
 let htmlElements;
-let todos = [{
+let items = [{
     color: 'white',
     bgColor: 'blue'
   },
@@ -13,14 +13,12 @@ let todos = [{
   }
 ];
 
-
 function init() {
   htmlElements = {
     bgColorInput: document.querySelector('input.bg-color-input'),
     textColorInput: document.querySelector('input.text-color-input'),
     addButton: document.querySelector('button.add-button'),
-    todos: document.querySelector('div.todos'),
-    todo: document.querySelector('div.todo'),
+    items: document.querySelector('div.items'),
     heloWorldText: document.querySelector('div.hello-world'),
     body: document.body,
   };
@@ -38,24 +36,24 @@ function divColor(color, bgColor) {
   newDeleteButton.addEventListener('click', deletteButtonCkicked);
 
 
-  let newTodoText = document.createElement('span');
-  newTodoText.classList.add("todo-text");
-  newTodoText.innerText = color;
-  newTodoText.style.color = color;
+  let newitemText = document.createElement('span');
+  newitemText.classList.add("item-text");
+  newitemText.innerText = color;
+  newitemText.style.color = color;
 
-  let newTodo = document.createElement('div');
-  newTodo.classList.add("todo");
-  newTodo.style.backgroundColor = bgColor;
-  newTodo.addEventListener('click', addBorderColorBg);
+  let newitem = document.createElement('div');
+  newitem.classList.add("item");
+  newitem.style.backgroundColor = bgColor;
+  newitem.addEventListener('click', addBorderColorBg);
 
-  newTodo.appendChild(newTodoText);
-  newTodo.appendChild(newDeleteButton);
-  htmlElements.todos.appendChild(newTodo);
+  newitem.appendChild(newitemText);
+  newitem.appendChild(newDeleteButton);
+  htmlElements.items.appendChild(newitem);
 }
 
 function render() {
-  for (let i = 0; i < todos.length; i++) {
-    divColor(todos[i].color, todos[i].bgColor);
+  for (let i = 0; i < items.length; i++) {
+    divColor(items[i].color, items[i].bgColor);
   }
 }
 
@@ -63,19 +61,20 @@ function render() {
 function addBorderColorBg() {
   resetSelection();
   // Тут подбор индекса масива будет
-  htmlElements.body.style.backgroundColor = todos[0].bgColor;
-  htmlElements.heloWorldText.style.color = todos[0].Color;
-  todos[0].select = true; /* Временно нулевой елемент */
+  htmlElements.body.style.backgroundColor = items[0].bgColor;/* Временно нулевой елемент */
+  htmlElements.heloWorldText.style.color = items[0].Color;/* Временно нулевой елемент */
+  items[0].select = true; /* Временно нулевой елемент */
 
   /* Функция которая если тру выдает бордер */
-    if (todos[0].select === true) {/* Врмеменно нулевой елемент */
-      document.querySelector('div.todo').classList.add('selected');
+    if (items[0].select === true) {/* Врмеменно нулевой елемент */
+      let item = document.querySelector('div.item');
+      item.classList.add('selected');
     }
 };
 
 /* функция сброса */
 function resetSelection(){
-  document.querySelector('div.todo').classList.remove('selected');
+  document.querySelector('div.item').classList.remove('selected');
   htmlElements.body.style.backgroundColor = "";
   htmlElements.heloWorldText.style.color = "";
 }
@@ -84,6 +83,7 @@ function resetSelection(){
 /* Функция выбора елемента созданного масива соответствующего нашему */
 function checElemenMasev() {
   // суда хочу вынести поиск елемнта масива
+  debugger;
   let item = this.parentElement;
   const itemElements = item.parentElement;
   let nodeArray = itemElements.querySelector('div.item');
@@ -104,6 +104,7 @@ function deletteButtonCkicked(event) {
 // Функция которая делает сброс селектета
 // тут перебор масива
 // i[i].selectet = folse;
+
 // Функция добовляет селект масиву и меняет его бордер на боржер цвета текста
 // После этого всего рендер
 
