@@ -11,6 +11,7 @@ let todos = [
   }
 ];
 
+
 function init() {
   htmlElements = {
     bgColorInput: document.querySelector('input.bg-color-input'),
@@ -52,16 +53,33 @@ function render() {
     }
 }
 
+/* Добавляет бордер к выбранному елементу и красит баграунд в цвет */
+function addBorderColorBg(){
+
+};
+
+/* функция сброса */
+function resetRender(){
+}
+
+/* Функция выбора елемента созданного масива соответствующего нашему */
+function checElemenMasev(){
+// суда хочу вынести поиск елемнта масива
+}
+
 // Вешаем на кнопку делит
-function closedDivElement(eventChenColorBg){
-  eventChenColorBg.stopPropagation();
+function closedDivelement(addBorderColorBg){
+  addBorderColorBg.stopPropagation();
   let item = this.parentElement;
   const itemElements = item.parentElement;
   const itemArray = Array.from(itemElements.querySelector('div.todo'));
   let index = itemArray.indexOf(item);
-  items.splice(index, 1);
+  todos.splice(index, 1);
+  // тут нужно еще что то сделать
   render();
 }
+
+
 
 // Функция которая делает сброс селектета
 // тут перебор масива
@@ -70,5 +88,16 @@ function closedDivElement(eventChenColorBg){
 // После этого всего рендер
 
 // Попросить доп задание !!!!
+/*  
+Часть 1
+В примере из дз 4.2. Реализовать удаление элементов из списка по нажатию на ‘X’
+Часть 2
+В примере из дз 4.2. Реализовать выделение элемента при клике на div class=”item”. 
+При этом фон и цвет текста заголовка принимают значения цвета текста и фона выбранного 
+div class=”item”
 
-
+Часть 3
+Подготовить портфолио в codepen с нумерацией, соответствующей нумерации заданий ДЗ
+Дедлайн
+17 мая 18:00
+*/
