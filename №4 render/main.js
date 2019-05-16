@@ -20,10 +20,12 @@ function init() {
     addButton: document.querySelector('button.add-button'),
     items: document.querySelector('div.items'),
     heloWorldText: document.querySelector('div.hello-world'),
-    body: document.body,
   };
 
   render();
+
+  htmlElements.body = document.body;
+  htmlElements.item = document.querySelector('div.item');
 }
 
 init();
@@ -32,23 +34,23 @@ function divColor(color, bgColor) {
   let newDeleteButton = document.createElement('button');
   newDeleteButton.classList.add("delete-button");
   newDeleteButton.color = color;
-  newDeleteButton.innerText = "X";
+  newDeleteButton.innerText = 'X';
   newDeleteButton.addEventListener('click', deletteButtonCkicked);
 
 
-  let newitemText = document.createElement('span');
-  newitemText.classList.add("item-text");
-  newitemText.innerText = color;
-  newitemText.style.color = color;
+  let newItemText = document.createElement('span');
+  newItemText.classList.add('item-text');
+  newItemText.innerText = color;
+  newItemText.style.color = color;
 
-  let newitem = document.createElement('div');
-  newitem.classList.add("item");
-  newitem.style.backgroundColor = bgColor;
-  newitem.addEventListener('click', addBorderColorBg);
+  let newItem = document.createElement('div');
+  newItem.classList.add('item');
+  newItem.style.backgroundColor = bgColor;
+  newItem.addEventListener('click', newItemClicked);
 
-  newitem.appendChild(newitemText);
-  newitem.appendChild(newDeleteButton);
-  htmlElements.items.appendChild(newitem);
+  newItem.appendChild(newItemText);
+  newItem.appendChild(newDeleteButton);
+  htmlElements.items.appendChild(newItem);
 }
 
 function render() {
@@ -57,46 +59,44 @@ function render() {
   }
 }
 
-/* Добавляет бордер к выбранному елементу и красит баграунд в цвет */
-function addBorderColorBg() {
-  resetSelection();
-  // Тут подбор индекса масива будет
-  htmlElements.body.style.backgroundColor = items[0].bgColor;/* Временно нулевой елемент */
-  htmlElements.heloWorldText.style.color = items[0].Color;/* Временно нулевой елемент */
-  items[0].select = true; /* Временно нулевой елемент */
 
-  /* Функция которая если тру выдает бордер */
-    if (items[0].select === true) {/* Врмеменно нулевой елемент */
-      let item = document.querySelector('div.item');
-      item.classList.add('selected');
-    }
-};
+function newItemClicked(){
+  for (let i = 0; i < items.length; i++){
+    items[i].selected = false;
+  }
 
-/* функция сброса */
-function resetSelection(){
-  document.querySelector('div.item').classList.remove('selected');
-  htmlElements.body.style.backgroundColor = "";
-  htmlElements.heloWorldText.style.color = "";
+  let itemSpan = this.parentElement;
+  const itemElement = itemSpan.parentElement;
+  /* Тут не ищет елемент */
+  const itemitemSpanArray = Array.from(itemElement.document.querySelector('dip.item'));
+  let index = itemitemSpanArray.indexOf(itemSpan);
+  items[index].selected = true;
+
+  if (items[index].selected === true) {
+    htmlElements.item.classList.add('selected');
+    htmlElements.body.style.backgroundColor = items[index].bgColor;
+    htmlElements.heloWorldText.style.color = items[index].Color;
+  }
+
+  render();
 }
 
 
-/* Функция выбора елемента созданного масива соответствующего нашему */
-function checElemenMasev() {
-  // суда хочу вынести поиск елемнта масива
-  debugger;
+
+function reset(){
+htmlElements.bgColorInput.value = '';
+htmlElements.textColorInput.velue = '';
+}
+
+function deletteButtonCkicked(evt) {
+  evt.stopPropagation();
   let item = this.parentElement;
-  const itemElements = item.parentElement;
-  let nodeArray = itemElements.querySelector('div.item');
-  const itemArray = Array.from(nodeArray);
+  const itemElement = item.parentElement;
+  const itemArray = Array.from(itemElement.querySelector('div.item'));
   let index = itemArray.indexOf(item);
-  item.splice(index, 1);
-}
-
-// Вешаем на кнопку делит РАБОТАЕТ НЕ ПРАВИЛЬНО
-function deletteButtonCkicked(event) {
-  event.stopPropagation();
-  checElemenMasev(); /* Вызываю выбор елемента масива */
-  render(); /* Отрисовываю обьек */
+  items.splice(index, 1);/* splice умеет и добавлять и удалять елементы(удаляет елемент с индексом) */
+ /* Тут нужен ресет */
+  render();
 }
 
 
