@@ -19,7 +19,7 @@ function init() {
     addButton: document.querySelector('button.add-button'),
     todos: document.querySelector('div.todos'),
     heloWorldText: document.querySelector('div.hello-world'),
-    body: document.bi,
+    body: document.body,
   };
 
   render();
