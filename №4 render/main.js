@@ -18,6 +18,8 @@ function init() {
     textColorInput: document.querySelector('input.text-color-input'),
     addButton: document.querySelector('button.add-button'),
     todos: document.querySelector('div.todos'),
+    heloWorldText: document.querySelector('div.hello-world'),
+    body: document.bi,
   };
 
   render();
@@ -54,11 +56,16 @@ function render() {
     }
 }
 
-/* Добавляет бордер к выбранному елементу и красит баграунд в цвет */
-function addBorderColorBg(color, bgColor) {
-  document.body.style.backgroundColor = bgColor;
 
+console.log(htmlElements.heloWorldText.style);
+/* Добавляет бордер к выбранному елементу и красит баграунд в цвет */
+function addBorderColorBg() {
+  htmlElements.body.style.backgroundColor = todos[0].bgColor;
+  htmlElements.heloWorldText.style.color = "red";
+  
 };
+
+
 
 /* функция сброса */
 function reset(){
@@ -72,8 +79,7 @@ function checElemenMasev(){
 }
 
 // Вешаем на кнопку делит РАБОТАЕТ НЕ ПРАВИЛЬНО
-function deletteButtonCkicked() {
-  debugger;
+function deletteButtonCkicked(event) {
 event.stopPropagation()
 let item = this.parentElement;
 const itemElements = item.parentElement;
