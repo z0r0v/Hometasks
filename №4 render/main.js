@@ -61,7 +61,7 @@ function render() {
 
 /* Добавляет бордер к выбранному елементу и красит баграунд в цвет */
 function addBorderColorBg() {
-  reset();
+  resetSelection();
   // Тут подбор индекса масива будет
   htmlElements.body.style.backgroundColor = todos[0].bgColor;
   htmlElements.heloWorldText.style.color = todos[0].Color;
@@ -74,11 +74,12 @@ function addBorderColorBg() {
 };
 
 /* функция сброса */
-function reset() {
-  htmlElements.bgColorInput.value = "";
-  htmlElements.textColorInput.value = "";
+function resetSelection(){
   document.querySelector('div.todo').classList.remove('selected');
+  htmlElements.body.style.backgroundColor = "";
+  htmlElements.heloWorldText.style.color = "";
 }
+
 
 /* Функция выбора елемента созданного масива соответствующего нашему */
 function checElemenMasev() {
