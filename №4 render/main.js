@@ -53,7 +53,6 @@ function divColor(color, bgColor) {
   htmlElements.items.appendChild(newItem);
 }
 
-
 function render() {
   if(htmlElements.items.childNodes.length){/* 0 это фелс а цифры это тру */
     htmlElements.items.innerHTML = null;/* Обнуляем DIV - ки если не равна нолю */
@@ -63,7 +62,6 @@ function render() {
     divColor(items[i].color, items[i].bgColor);
   }
 }
-
 
 function newItemClicked(){
   for (let i = 0; i < items.length; i++){
@@ -82,22 +80,18 @@ function newItemClicked(){
       for (let i = 0; i < newItemArray.length; i++){
         newItemArray[i].classList.remove('selected');
       }
-
       newItemArray[index].classList.add('selected');
       htmlElements.body.style.backgroundColor = items[index].bgColor;
       htmlElements.heloWorldText.style.color = items[index].color;
     }
    }
-
   addBgBorder();
 }
-
 
   function resset(){
     htmlElements.bgColorInput.value = '';
     htmlElements.textColorInput.velue = '';
   }
-
 
 function deletteButtonCkicked(evt) {
   evt.stopPropagation();
