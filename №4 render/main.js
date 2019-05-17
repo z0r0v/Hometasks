@@ -37,7 +37,6 @@ function divColor(color, bgColor) {
   newDeleteButton.innerText = 'X';
   newDeleteButton.addEventListener('click', deletteButtonCkicked);
 
-
   let newItemText = document.createElement('span');
   newItemText.classList.add('item-text');
   newItemText.innerText = color;
@@ -54,53 +53,64 @@ function divColor(color, bgColor) {
 }
 
 function render() {
-  if(htmlElements.items.childNodes.length){/* 0 это фелс а цифры это тру */
-    htmlElements.items.innerHTML = null;/* Обнуляем DIV - ки если не равна нолю */
+  if (htmlElements.items.childNodes.length) {
+    htmlElements.items.innerHTML = null;
   }
-
   for (let i = 0; i < items.length; i++) {
     divColor(items[i].color, items[i].bgColor);
   }
 }
 
-function newItemClicked(){
-  for (let i = 0; i < items.length; i++){
+function newItemClicked() {
+  for (let i = 0; i < items.length; i++) {
     items[i].selected = false;
   }
-
   const newItem = this.parentElement;
   const elementCollection = newItem.childNodes;
   const newItemArray = Array.from(elementCollection);
-  let index = newItemArray.indexOf(this);/* Читать про this */
-  console.log(newItemArray);
+  let index = newItemArray.indexOf(this);
   items[index].selected = true;
 
-  function addBgBorder() {
+  function addBgColor() {
     if (items[index].selected === true) {
-      for (let i = 0; i < newItemArray.length; i++){
-        newItemArray[i].classList.remove('selected');
-      }
-      newItemArray[index].classList.add('selected');
       htmlElements.body.style.backgroundColor = items[index].bgColor;
       htmlElements.heloWorldText.style.color = items[index].color;
     }
-   }
-  addBgBorder();
-}
-
-  function resset(){
-    htmlElements.bgColorInput.value = '';
-    htmlElements.textColorInput.velue = '';
+    addBorder();
+  }
+  addBgColor();
   }
 
-function deletteButtonCkicked(evt) {
-  evt.stopPropagation();
-  let item = this.parentElement;
-  const itemElement = item.parentElement;
-  const itemArray = Array.from(itemElement.querySelectorAll('div.item'));
-  let index = itemArray.indexOf(item);
-  console.log(index);
-  items.splice(index, 1);/* splice умеет и добавлять и удалять елементы(удаляет елемент с индексом) */
-  /* Тут нужен ресет */
-  render();
-}
+ /*  function resset() {
+    htmlElements.bgColorInput.value = '';
+    htmlElements.textColorInput.velue = '';
+  } */
+
+  function deletteButtonCkicked(evt) {
+    evt.stopPropagation();
+    let item = this.parentElement;
+    const itemElement = item.parentElement;
+    const itemArray = Array.from(itemElement.querySelectorAll('div.item'));
+    let index = itemArray.indexOf(item);
+    items.splice(index, 1);
+    render();
+    addBorder();
+  }
+
+  
+  function addBorder(){
+    let item = document.querySelector('div.items');
+    const itemArray = Array.from(item.querySelectorAll('div.item'));
+    console.log(itemArray);
+    for (let i = 0; i < items.length; i++){
+      if(items[i].selected === true){
+        index = items.indexOf(items[i]);
+        console.log(itemArray[index]);
+        for (let i = 0; i < itemArray.length; i++){
+          itemArray[index].classList.add('selected');
+        }
+      }else { itemArray[i].classList.remove('selected');
+    }
+  }
+  }
+  
