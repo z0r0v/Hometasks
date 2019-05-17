@@ -79,36 +79,36 @@ function newItemClicked() {
     addBorder();
   }
   addBgColor();
-  }
+}
 /* Не используемая пока функ */
- /*  function resset() {
-    htmlElements.bgColorInput.value = '';
-    htmlElements.textColorInput.velue = '';
-  } */
+/*  function resset() {
+   htmlElements.bgColorInput.value = '';
+   htmlElements.textColorInput.velue = '';
+ } */
 
-  function deletteButtonCkicked(evt) {
-    evt.stopPropagation();
-    let item = this.parentElement;
-    const itemElement = item.parentElement;
-    const itemArray = Array.from(itemElement.querySelectorAll('div.item'));
-    let index = itemArray.indexOf(item);
-    items.splice(index, 1);
-    render();
-    addBorder();
-  }
+function deletteButtonCkicked(evt) {
+  evt.stopPropagation();
+  let item = this.parentElement;
+  const itemElement = item.parentElement;
+  const itemArray = Array.from(itemElement.querySelectorAll('div.item'));
+  let index = itemArray.indexOf(item);
+  items.splice(index, 1);
+  render();
+  addBorder();
+}
 
 
-  function addBorder(){
-    let item = document.querySelector('div.items');
-    const itemArray = Array.from(item.querySelectorAll('div.item'));
-    for (let i = 0; i < items.length; i++){
-      if(items[i].selected === true){
-        index = items.indexOf(items[i]);
-        for (let i = 0; i < itemArray.length; i++){
-          itemArray[index].classList.add('selected');
-        }
-      }else { itemArray[i].classList.remove('selected');
+function addBorder() {
+  let item = document.querySelector('div.items');
+  const itemArray = Array.from(item.querySelectorAll('div.item'));
+  for (let i = 0; i < items.length; i++) {
+    if (items[i].selected === true) {
+      index = items.indexOf(items[i]);
+      for (let i = 0; i < itemArray.length; i++) {
+        itemArray[index].classList.add('selected');
+      }
+    } else {
+      itemArray[i].classList.remove('selected');
     }
   }
-  }
-  
+}
