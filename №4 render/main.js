@@ -97,6 +97,7 @@ function deletteButtonCkicked(evt) {
   addBorder();
 }
 
+/* items.forEach(obj => { obj.selected = false }); цикл в одну строчку*/
 
 function addBorder() {
   let item = document.querySelector('div.items');
