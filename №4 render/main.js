@@ -80,7 +80,7 @@ function newItemClicked() {
   }
   addBgColor();
   }
-
+/* Не используемая пока функ */
  /*  function resset() {
     htmlElements.bgColorInput.value = '';
     htmlElements.textColorInput.velue = '';
@@ -97,15 +97,13 @@ function newItemClicked() {
     addBorder();
   }
 
-  
+
   function addBorder(){
     let item = document.querySelector('div.items');
     const itemArray = Array.from(item.querySelectorAll('div.item'));
-    console.log(itemArray);
     for (let i = 0; i < items.length; i++){
       if(items[i].selected === true){
         index = items.indexOf(items[i]);
-        console.log(itemArray[index]);
         for (let i = 0; i < itemArray.length; i++){
           itemArray[index].classList.add('selected');
         }
