@@ -151,10 +151,16 @@ function addButtonValue() {
     let bgColor = document.querySelector('input.bg-color-input').value;
     let color = document.querySelector('input.text-color-input').value;
     if(checkIfColorCanBeAdded(bgColor) === true && checkIfColorCanBeAdded(color)) {
-      items.push({color, bgColor});
+      
     }
+
     colorFucusOut(htmlElements.bgColorInput);
     colorFucusOut(htmlElements.textColorInput);
-    render();
-    resset();
+    
+    if(checkIfColorCanBeAdded(bgColor) && checkIfColorCanBeAdded(bgColor)){
+      items.push({color, bgColor});
+      render();
+      resset();
+    }
+    
 }
