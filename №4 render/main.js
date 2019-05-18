@@ -28,6 +28,9 @@ function init() {
 
   htmlElements.body = document.body;
   htmlElements.item = document.querySelector('div.item');
+  htmlElements.addButton.addEventListener('click', addButtonValue);
+  htmlElements.bgColorInput.addEventListener('focusout', function(){colorFucusOut(this)});
+  htmlElements.textColorInput.addEventListener('focusout', function(){colorFucusOut(this)});
 }
 
 init();
@@ -77,11 +80,11 @@ function newItemClicked() {
   render();
   addBgColor();
 }
-/* Не используемая пока функ */
-/*  function resset() {
+
+ function resset() {
    htmlElements.bgColorInput.value = '';
-   htmlElements.textColorInput.velue = '';
- } */
+   htmlElements.textColorInput.value = '';
+ }
 
 function deletteButtonCkicked(evt) {
   evt.stopPropagation();
@@ -122,4 +125,36 @@ let item = document.querySelector('div.items');
       }
     }
   }
+}
+
+function checkIfColorCanBeAdded(color) {
+  if (color.indexOf('rgb') > -1 || color === '') {
+  return false;
+}
+let div = document.createElement('div');
+div.style.backgroundColor = color;
+return div.style.backgroundColor === color;
+}
+
+
+function colorFucusOut(input){
+  if(checkIfColorCanBeAdded(input.value) === true){
+    input.style.borderColor ='green';
+  }
+  else{
+    input.style.borderColor ='red';
+  }
+  
+}
+
+function addButtonValue() {
+    let bgColor = document.querySelector('input.bg-color-input').value;
+    let color = document.querySelector('input.text-color-input').value;
+    if(checkIfColorCanBeAdded(bgColor) === true && checkIfColorCanBeAdded(color)) {
+      items.push({color, bgColor});
+    }
+    colorFucusOut(htmlElements.bgColorInput);
+    colorFucusOut(htmlElements.textColorInput);
+    render();
+    resset();
 }
