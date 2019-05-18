@@ -96,8 +96,8 @@ function deletteButtonCkicked(evt) {
   render();
 }
 
-/* items.forEach(obj => { obj.selected = false }); цикл в одну строчку*/
 
+/* items.forEach(obj => { obj.selected = false }); цикл в одну строчку*/
 function addBorder() {
   let item = document.querySelector('div.items');
   const itemArray = Array.from(item.querySelectorAll('div.item'));
@@ -150,17 +150,19 @@ function colorFucusOut(input){
 function addButtonValue() {
     let bgColor = document.querySelector('input.bg-color-input').value;
     let color = document.querySelector('input.text-color-input').value;
-    if(checkIfColorCanBeAdded(bgColor) === true && checkIfColorCanBeAdded(color)) {
-      
+    if(checkIfColorCanBeAdded(bgColor) === true && checkIfColorCanBeAdded(color) === true) {
     }
-
     colorFucusOut(htmlElements.bgColorInput);
     colorFucusOut(htmlElements.textColorInput);
-    
-    if(checkIfColorCanBeAdded(bgColor) && checkIfColorCanBeAdded(bgColor)){
-      items.push({color, bgColor});
-      render();
-      resset();
+
+    if(checkIfColorCanBeAdded(bgColor) && checkIfColorCanBeAdded(color)){
+      for (let i = 0; i < items.length; i++) {
+        debugger;
+        if(items[i].bgColor !== bgColor && items[i].color !== color){
+          items.push({color, bgColor});
+        }
+        render();
+        resset();
     }
-    
+  }
 }
