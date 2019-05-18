@@ -5,11 +5,13 @@ let items = [{
   },
   {
     color: 'black',
-    bgColor: 'yellow'
+    bgColor: 'yellow',
+    selected: true,
   },
   {
     color: 'green',
-    bgColor: 'whitesmoke'
+    bgColor: 'whitesmoke',
+    
   }
 ];
 
@@ -59,6 +61,7 @@ function render() {
   for (let i = 0; i < items.length; i++) {
     divColor(items[i].color, items[i].bgColor);
   }
+  addBorder();
 }
 
 function newItemClicked() {
@@ -76,8 +79,8 @@ function newItemClicked() {
       htmlElements.body.style.backgroundColor = items[index].bgColor;
       htmlElements.heloWorldText.style.color = items[index].color;
     }
-    addBorder();
   }
+  render();
   addBgColor();
 }
 /* Не используемая пока функ */
@@ -94,7 +97,6 @@ function deletteButtonCkicked(evt) {
   let index = itemArray.indexOf(item);
   items.splice(index, 1);
   render();
-  addBorder();
 }
 
 /* items.forEach(obj => { obj.selected = false }); цикл в одну строчку*/
