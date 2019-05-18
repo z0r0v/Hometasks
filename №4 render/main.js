@@ -62,6 +62,7 @@ function render() {
     divColor(items[i].color, items[i].bgColor);
   }
   addBorder();
+  addBgColor();
 }
 
 function newItemClicked() {
@@ -73,13 +74,6 @@ function newItemClicked() {
   const newItemArray = Array.from(elementCollection);
   let index = newItemArray.indexOf(this);
   items[index].selected = true;
-
-  function addBgColor() {
-    if (items[index].selected === true) {
-      htmlElements.body.style.backgroundColor = items[index].bgColor;
-      htmlElements.heloWorldText.style.color = items[index].color;
-    }
-  }
   render();
   addBgColor();
 }
@@ -112,6 +106,20 @@ function addBorder() {
       }
     } else {
       itemArray[i].classList.remove('selected');
+    }
+  }
+}
+
+function addBgColor() {
+let item = document.querySelector('div.items');
+  const itemArray = Array.from(item.querySelectorAll('div.item'));
+  for (let i = 0; i < items.length; i++) {
+    if (items[i].selected === true) {
+      index = items.indexOf(items[i]);
+      for (let i = 0; i < itemArray.length; i++) {
+       document.body.style.backgroundColor = items[index].bgColor;
+       document.querySelector('div.hello-world').style.color = items[index].color;
+      }
     }
   }
 }

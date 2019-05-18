@@ -9,16 +9,27 @@ let reternArray = [
     }
     
     let followCursor = (function() {
-      var ball = document.createElement('div');
+
+      let ball = document.createElement('div');
       ball.style.position = 'absolute';
       ball.style.margin = '-10px';
       ball.style.padding = '5px';
-      /* ball.background =  */
       ball.style.border = '1px solid red';
+
+      let balImg = document.createElement('circle');
+      balImg.id = 'Oval-1';
+      balImg.fill = '#FFFFFF';
+      balImg.cx = '20';
+      balImg.ry = '20';
+      balImg.r = '20';
+      console.log(balImg);
+      
+
     
       return {
         init: function() {
           document.body.appendChild(ball);
+          ball.appendChild(balImg);
         },
     
         run: function(e) {
