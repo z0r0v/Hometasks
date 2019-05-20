@@ -1,21 +1,16 @@
-document.onclick = function(e) { // выводит текущие координаты при клике
-  document.getElementById('coords').innerHTML = e.clientX + ':' + e.clientY;
-};
-let field = document.getElementById('field');
-
 let ballArray = []
-
-
+let field = document.getElementById('field');
+let ball = document.querySelector('svg.svg');
+let coords = document.getElementById('coords');
+document.onclick = function(e) { // выводит текущие координаты при клике
+  coords.innerHTML = e.clientX + ':' + e.clientY;
+};
   field.onclick = function(e){
-  document.querySelector('svg.svg').style.left = e.pageX + "px";
-  document.querySelector('svg.svg').style.top = e.pageY + "px";
-
-  ballArray.x = this.e.pageX + "px";
-  ballArray.y = this.e.pageY + "px";  
+    ball.style.left = e.pageX + "px";
+    ball.style.top = e.pageY + "px";
 }
 
 
-
-console.log(ballArray);
-
-
+function swing(t) {
+  return (-Math.cos(p*Math.PI)/2) + 0.5;
+}
