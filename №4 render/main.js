@@ -11,7 +11,7 @@ let items = [{
   {
     color: 'green',
     bgColor: 'whitesmoke',
-    
+
   }
 ];
 
@@ -29,8 +29,12 @@ function init() {
   htmlElements.body = document.body;
   htmlElements.item = document.querySelector('div.item');
   htmlElements.addButton.addEventListener('click', addButtonValue);
-  htmlElements.bgColorInput.addEventListener('focusout', function(){colorFucusOut(this)});
-  htmlElements.textColorInput.addEventListener('focusout', function(){colorFucusOut(this)});
+  htmlElements.bgColorInput.addEventListener('focusout', function () {
+    colorFucusOut(this)
+  });
+  htmlElements.textColorInput.addEventListener('focusout', function () {
+    colorFucusOut(this)
+  });
 }
 
 init();
@@ -81,10 +85,10 @@ function newItemClicked() {
   addBgColor();
 }
 
- function resset() {
-   htmlElements.bgColorInput.value = '';
-   htmlElements.textColorInput.value = '';
- }
+function resset() {
+  htmlElements.bgColorInput.value = '';
+  htmlElements.textColorInput.value = '';
+}
 
 function deletteButtonCkicked(evt) {
   evt.stopPropagation();
@@ -114,14 +118,14 @@ function addBorder() {
 }
 
 function addBgColor() {
-let item = document.querySelector('div.items');
+  let item = document.querySelector('div.items');
   const itemArray = Array.from(item.querySelectorAll('div.item'));
   for (let i = 0; i < items.length; i++) {
     if (items[i].selected === true) {
       index = items.indexOf(items[i]);
       for (let i = 0; i < itemArray.length; i++) {
-       document.body.style.backgroundColor = items[index].bgColor;
-       document.querySelector('div.hello-world').style.color = items[index].color;
+        document.body.style.backgroundColor = items[index].bgColor;
+        document.querySelector('div.hello-world').style.color = items[index].color;
       }
     }
   }
@@ -129,40 +133,52 @@ let item = document.querySelector('div.items');
 
 function checkIfColorCanBeAdded(color) {
   if (color.indexOf('rgb') > -1 || color === '') {
-  return false;
-}
-let div = document.createElement('div');
-div.style.backgroundColor = color;
-return div.style.backgroundColor === color;
+    return false;
+  }
+  let div = document.createElement('div');
+  div.style.backgroundColor = color;
+  return div.style.backgroundColor === color;
 }
 
 
-function colorFucusOut(input){
-  if(checkIfColorCanBeAdded(input.value) === true){
-    input.style.borderColor ='green';
+function colorFucusOut(input) {
+  if (checkIfColorCanBeAdded(input.value) === true) {
+    input.style.borderColor = 'green';
+  } else {
+    input.style.borderColor = 'red';
   }
-  else{
-    input.style.borderColor ='red';
+}
+
+function checkIfColorAdded(color, bgColor){
+  let contains = false;
+  for (let i = 0; i < items.length; i++){ 
+    const currentIten = items[i];
+    if(currentIten.color === color && currentIten.bgColor === bgColor) {
+      contains = true;
+    }
   }
-  
+  return contains;
 }
 
 function addButtonValue() {
-    let bgColor = document.querySelector('input.bg-color-input').value;
-    let color = document.querySelector('input.text-color-input').value;
-    if(checkIfColorCanBeAdded(bgColor) === true && checkIfColorCanBeAdded(color) === true) {
-    }
-    colorFucusOut(htmlElements.bgColorInput);
-    colorFucusOut(htmlElements.textColorInput);
-
-    if(checkIfColorCanBeAdded(bgColor) && checkIfColorCanBeAdded(color)){
-      for (let i = 0; i < items.length; i++) {
-        debugger;
-        if(items[i].bgColor !== bgColor && items[i].color !== color){
-          items.push({color, bgColor});
-        }
+    let inpTextColor = htmlElements.textColorInput.value;
+    let inputBgColor =  htmlElements.bgColorInput.value;
+    let checkBgColor = checkIfColorCanBeAdded(inputBgColor);
+    let checkTextColor = checkIfColorCanBeAdded(inpTextColor);
+    if (checkTextColor === true && checkBgColor === true) {
+      if(checkIfColorAdded(inpTextColor, inputBgColor) === false){
+        items.push({color:inpTextColor, bgColor:inputBgColor});
         render();
-        resset();
+        resset();  
+      }else{
+        htmlElements.textColorInput.style.borderColor = 'red';
+        htmlElements.bgColorInput.style.borderColor = 'red';
     }
+    } else{
+        colorFucusOut(htmlElements.bgColorInput);
+        colorFucusOut(htmlElements.textColorInput);
   }
 }
+
+
+
