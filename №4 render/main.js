@@ -110,6 +110,9 @@ function addBorder() {
       index = items.indexOf(items[i]);
       for (let i = 0; i < itemArray.length; i++) {
         itemArray[index].classList.add('selected');
+          if(items[i].selected && itemArray[index].style.backgroundColor === 'black'){
+            itemArray[index].style.border = 'ridge';
+          }
       }
     } else {
       itemArray[i].classList.remove('selected');
@@ -179,6 +182,3 @@ function addButtonValue() {
         colorFucusOut(htmlElements.textColorInput);
   }
 }
-
-
-
