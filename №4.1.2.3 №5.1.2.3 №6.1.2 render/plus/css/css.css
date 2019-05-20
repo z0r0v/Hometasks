@@ -27,4 +27,9 @@ body {
   }
   .svg{
       position: absolute;
+      
+  }
+
+  div.ball{
+    transition: width 2s linear 1s;
   }

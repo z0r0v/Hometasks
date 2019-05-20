@@ -6,8 +6,9 @@ document.onclick = function(e) { // выводит текущие координ
   coords.innerHTML = e.clientX + ':' + e.clientY;
 };
   field.onclick = function(e){
-    ball.style.left = e.pageX + "px";
-    ball.style.top = e.pageY + "px";
+    ball.style.left = e.pageX + 'px';
+    ball.style.top = e.pageY + 'px';
+  
 }
 
 
