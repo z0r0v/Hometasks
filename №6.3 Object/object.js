@@ -48,7 +48,7 @@ function Sensei(senName, senLastName, qualification, character){
     this.character = character;
    /*  speak(){alert("speak for life")}, */
 }
-let sensei =  Sensei("Yury", "Tatsenka", "Full stack web developer", "vigorous");
+let sensei = new Sensei("Yury", "Tatsenka", "Full stack web developer", "vigorous");
 
 function Computer(monitor, cropus){
     this.monitor = monitor;
