@@ -1,17 +1,23 @@
-let ballArray = []
+let ballArray = [{left:'35px', top:'36px'}];
 let field = document.getElementById('field');
 let ball = document.querySelector('svg.svg');
-let coords = document.getElementById('coords');
-document.onclick = function(e) { // выводит текущие координаты при клике
-  coords.innerHTML = e.clientX + ':' + e.clientY;
-};
+let repeat = document.querySelector('a.myButton');
+repeat.addEventListener('click', goRepeat);
+
   field.onclick = function(e){
-    ball.style.left = e.pageX + 'px';
-    ball.style.top = e.pageY + 'px';
-  
+    let left = ball.style.left = e.pageX + 'px';
+    let top = ball.style.top = e.pageY + 'px';
+    ballArray.push({left, top});
 }
 
-
-function swing(t) {
-  return (-Math.cos(p*Math.PI)/2) + 0.5;
-}
+function goRepeat(){
+     let i = 0;
+      let startTimert = setInterval( function (){
+        ball.style.left = ballArray[i].left;
+        ball.style.top = ballArray[i].top;
+        i++;
+        if(i === ballArray.length){
+          clearInterval(startTimert);
+        }
+      }, 800);
+    }
