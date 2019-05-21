@@ -1,6 +1,6 @@
 let ballArray = [{
-  left: '35px',
-  top: '36px'
+  left: '60px',
+  top: '60px'
 }];
 let field = document.getElementById('field');
 let ball = document.querySelector('svg.svg');
@@ -29,3 +29,4 @@ function goRepeat() {
     }
   }, 800);
 }
+console.log(ballArray);
