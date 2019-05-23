@@ -153,8 +153,6 @@ VideoCard.prototype.videoCardSpecificationsOnScreen = function(){
     `${type}` + this.cooling +'.';
 }
 videoCard.videoCardSpecificationsOnScreen();
-console.log(videoCard.videoCardSpecificationsOnScreen());
-
 
 audience57.charAud = charAud;
 audience57.windowCharacter = windowCharacter;
@@ -164,5 +162,3 @@ audience57.table = table;
 audience57.sensei = sensei;
 computer.videoCard = videoCard;
 audience57.computer =computer;
-
-console.log(audience57);
