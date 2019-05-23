@@ -6,7 +6,7 @@ function Audience57(timeAir){
 Audience57.prototype.timeAir = (time) => {
     this.time += time;
 }
-let audience57 = new Audience57(5);/* Создано проветриваемое 5 минут помещение*/
+const audience57 = new Audience57(5);/* Создано проветриваемое 5 минут помещение*/
 audience57.timeAir(5);/* Увеличили проветривание на 5 минут += time*/
 
 function CharAud(ceilingHeight, roomLength, roomWidth, roomNumber){
@@ -18,10 +18,11 @@ function CharAud(ceilingHeight, roomLength, roomWidth, roomNumber){
 
 CharAud.prototype.cheNameTeacherInNameplate = (nameTeacher) => {
     /* Конкатенация фразы в ковычках и имени на табличке */
-    this.nameTeacher = "great teacher" + nameTeacher;
+    const great = "great teacher";
+    this.nameTeacher = `${great}`  + nameTeacher;
 }
 /* Создание обьекта с характеристиками для аудитории 57 */
-let charAud = new CharAud("2.5m", "5m", "5m", "57");
+const charAud = new CharAud("2.5m", "5m", "5m", "57");
 /* Изменение имени на таблички в характеристиках аудитории 57 */
 charAud.cheNameTeacherInNameplate("Yriy");/*  */
 
@@ -31,7 +32,7 @@ function WindowCharacter (fiveChamberProfile, doubleGlazingThickness, sealColor)
     this.doubleGlazingThickness = doubleGlazingThickness;
     this.sealColor = sealColor;
 }
-let windowCharacter = new WindowCharacter("71mm", "40mm", "Gray");
+const windowCharacter = new WindowCharacter("71mm", "40mm", "Gray");
 
 WindowCharacter.prototype.windowOpening = (handlePosition) => {
     switch (handlePosition){
@@ -56,7 +57,7 @@ function Door(material, doorHandle){
     this.material = material;
     this.doorHandle = doorHandle;
 }
-let door = new Door("wood", "tupai");
+const door = new Door("wood", "tupai");
 
 Door.prototype.DoorOpening = () => {
     let open = "Makes a sound: 'Krch, Krch, Krch'";
@@ -71,15 +72,17 @@ function Projector(trademark, model, quality){
     this.model = model;
     this.quality = quality;
 }
-/* Разобраться с этой хуйней поменять  на const  сделать +  */
-Projector.prototype.readMakeModelProjector = () => {
-    debugger;
-    console.log(this.model);
-}
 
-let projector = new Projector("Philips", "PPX 4835", "HD 720p");
-console.log(projector);
+/* Доделать этот механизм разобраться как работает */
+Projector.prototype.readMakeModelProjector = () => {
+    let model = this.model;
+    const branText = `Device mark: `;
+    const modelText = `, model: `
+    return `${branText}` + this.trademark + `${modelText}` + model;
+}
+const projector = new Projector("Philips", "PPX 4835", "HD 720p");
 projector.readMakeModelProjector();
+console.log(projector.readMakeModelProjector());
 
 
 
@@ -88,10 +91,10 @@ function Table(manufacturer, color,type){
     this.color = color;
     this.type = type;
 }
-let table = new Table("Ikea","wenge","office");
+const table = new Table("Ikea","wenge","office");
 
 Table.prototype.pushShelf = () => {
-    let shelf = 'push shelf';
+    const shelf = 'push shelf';
     return shelf;
 }
 table.pushShelf();
@@ -103,10 +106,10 @@ function Sensei(senName, senLastName, qualification, character){
     this.qualification = qualification;
     this.character = character;
 }
-let sensei = new Sensei("Yury", "Tatsenka", "Full stack web developer", "vigorous");
+const sensei = new Sensei("Yury", "Tatsenka", "Full stack web developer", "vigorous");
 
 Sensei.prototype.answerStupidQuestions = () => {
-    let speak = 'who doesn\'t understand?';
+    const speak = 'who doesn\'t understand?';
     return speak;
 }
 sensei.answerStupidQuestions();
@@ -116,7 +119,7 @@ function Computer(monitor, cropus){
     this.monitor = monitor;
     this.cropus = cropus;
 }
-let computer = new Computer("17\"", "Tower")
+const computer = new Computer("17\"", "Tower")
 
 Computer.prototype.runningWindows = () => {
    return "running windows";
@@ -128,7 +131,7 @@ function VideoCard(graphicsProcessor, typeVideoMemory, videoMemoryBus, cooling){
     this.videoMemoryBus = videoMemoryBus;
     this.cooling = cooling;
 }
-let videoCard = new VideoCard("GeForce 9500 GT", "GDDR5", "32bit", "active");
+const videoCard = new VideoCard("GeForce 9500 GT", "GDDR5", "32bit", "active");
 
 VideoCard.prototype.videoCardStart = () =>{
     return "videoCardStart";
