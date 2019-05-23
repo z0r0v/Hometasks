@@ -3,11 +3,12 @@ function Audience57(timeAir){
     this.time = timeAir;
 }
 /* Функция проветривания через прототип в обьект */
-Audience57.prototype.timeAir = (time) => {
+Audience57.prototype.timeAir = function(time){
     this.time += time;
 }
-const audience57 = new Audience57(5);/* Создано проветриваемое 5 минут помещение*/
-audience57.timeAir(5);/* Увеличили проветривание на 5 минут += time*/
+const audience57 = new Audience57(0);/* Создано помещение  задан парметр проветривания 0*/
+audience57.timeAir(5);/* Проветрили 5 минут*/
+audience57.timeAir(5);/* Проветрили еще раз 5 минут итого оно проветривалось 10минут*/
 
 function CharAud(ceilingHeight, roomLength, roomWidth, roomNumber){
     this.ceilingHeight = ceilingHeight;
@@ -16,7 +17,7 @@ function CharAud(ceilingHeight, roomLength, roomWidth, roomNumber){
     this.roomNumber = roomNumber;
 }
 
-CharAud.prototype.cheNameTeacherInNameplate = (nameTeacher) => {
+CharAud.prototype.cheNameTeacherInNameplate = function(nameTeacher) {
     /* Конкатенация фразы в ковычках и имени на табличке */
     const great = "great teacher";
     this.nameTeacher = `${great}`  + nameTeacher;
@@ -33,8 +34,8 @@ function WindowCharacter (fiveChamberProfile, doubleGlazingThickness, sealColor)
     this.sealColor = sealColor;
 }
 const windowCharacter = new WindowCharacter("71mm", "40mm", "Gray");
-
-WindowCharacter.prototype.windowOpening = (handlePosition) => {
+/* Действия производимые с окном */
+WindowCharacter.prototype.windowOpening = function(handlePosition){
     switch (handlePosition){
         case 'up':
             return "ventilation";
@@ -49,9 +50,8 @@ WindowCharacter.prototype.windowOpening = (handlePosition) => {
             return "Window closed";
     }
 }
-/* окно открыто на проветривание */
+/* Открыли окно на проветривание */
 windowCharacter.windowOpening("up");
-
 
 function Door(material, doorHandle){
     this.material = material;
@@ -59,7 +59,7 @@ function Door(material, doorHandle){
 }
 const door = new Door("wood", "tupai");
 
-Door.prototype.DoorOpening = () => {
+Door.prototype.DoorOpening = function(){
     let open = "Makes a sound: 'Krch, Krch, Krch'";
     return open;
 }
@@ -73,17 +73,16 @@ function Projector(trademark, model, quality){
     this.quality = quality;
 }
 
-/* Доделать этот механизм разобраться как работает */
-Projector.prototype.readMakeModelProjector = () => {
-    let model = this.model;
+Projector.prototype.readMakeModelProjector = function(){
     const branText = `Device mark: `;
-    const modelText = `, model: `
-    return `${branText}` + this.trademark + `${modelText}` + model;
+    const modelText = `, model: `;
+    const qualityText =  `, quality: `;
+    return `${branText}` + this.trademark + `${modelText}` + this.model + `${qualityText}` + this.quality;
 }
-const projector = new Projector("Philips", "PPX 4835", "HD 720p");
-projector.readMakeModelProjector();
-console.log(projector.readMakeModelProjector());
 
+const projector = new Projector("Philips", "PPX 4835", "HD 720p");
+/* Читаем свойства проэктора или он сам читает, умный такой проектор))*/
+projector.readMakeModelProjector();
 
 
 function Table(manufacturer, color,type){
@@ -93,10 +92,11 @@ function Table(manufacturer, color,type){
 }
 const table = new Table("Ikea","wenge","office");
 
-Table.prototype.pushShelf = () => {
+Table.prototype.pushShelf = function(){
     const shelf = 'push shelf';
     return shelf;
 }
+/* Выдвигаем полку стола */
 table.pushShelf();
 
 
@@ -108,10 +108,11 @@ function Sensei(senName, senLastName, qualification, character){
 }
 const sensei = new Sensei("Yury", "Tatsenka", "Full stack web developer", "vigorous");
 
-Sensei.prototype.answerStupidQuestions = () => {
+Sensei.prototype.answerStupidQuestions = function(){
     const speak = 'who doesn\'t understand?';
     return speak;
 }
+/* Сенсей спросил кому че не понятно ?*/
 sensei.answerStupidQuestions();
 
 
@@ -121,9 +122,12 @@ function Computer(monitor, cropus){
 }
 const computer = new Computer("17\"", "Tower")
 
-Computer.prototype.runningWindows = () => {
+Computer.prototype.runningWindows = function(){
    return "running windows";
 }
+/* компьютер запустил винду */
+computer.runningWindows();
+
 
 function VideoCard(graphicsProcessor, typeVideoMemory, videoMemoryBus, cooling){
     this.graphicsProcessor = graphicsProcessor;
@@ -133,10 +137,23 @@ function VideoCard(graphicsProcessor, typeVideoMemory, videoMemoryBus, cooling){
 }
 const videoCard = new VideoCard("GeForce 9500 GT", "GDDR5", "32bit", "active");
 
-VideoCard.prototype.videoCardStart = () =>{
-    return "videoCardStart";
+VideoCard.prototype.videoCardSpecificationsOnScreen = function(){
+        const produced = `Produced by: `;
+        let producedСountry;
+        const model = `, model: `;
+        const memoryType = `, memory type: `;
+        const power = `, power: `;
+        const type = `, type: `;
+        if(this.graphicsProcessor = "GeForce 9500 GT")
+            producedСountry = "Taiwan";
+    return`${produced}` + producedСountry + 
+    `${model}` + this.graphicsProcessor +
+    `${memoryType}` + this.typeVideoMemory +
+    `${power}` + this.videoMemoryBus +
+    `${type}` + this.cooling +'.';
 }
-videoCard.videoCardStart();
+videoCard.videoCardSpecificationsOnScreen();
+console.log(videoCard.videoCardSpecificationsOnScreen());
 
 
 audience57.charAud = charAud;
@@ -148,6 +165,4 @@ audience57.sensei = sensei;
 computer.videoCard = videoCard;
 audience57.computer =computer;
 
-/* console.log(audience57); */
-
-
+console.log(audience57);
