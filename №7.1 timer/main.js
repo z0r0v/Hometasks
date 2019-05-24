@@ -72,7 +72,7 @@ function modifyText(new_text) {
     output.firstChild.nodeValue = new_text;    
   }
 
-
+/* переработать это говно */
   function starTimer(){
     let d = new Date();
     let t = d.toLocaleTimeString();
