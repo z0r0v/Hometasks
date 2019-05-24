@@ -1,12 +1,6 @@
-const timer = setInterval(onIntervalNextTick, 1000);/* timeOute*/
-const myInterval = setInterval(starTimer, 1000); /* timeOute timer*/
-
-stopTimerClokc(myInterval);
-
-function stopTimerClokc(time){
-    clearTimeout(time);
-}
-
+const startClockInterval = setInterval(onIntervalNextTick, 1000);
+const startTimeInterval = setTimeout(timerStartButton, 1000);
+clearInterval(startTimeInterval);
 
 const htmlElements = {};
 htmlElements.startBtn = document.querySelector('.container .buttons button.start');
@@ -30,6 +24,14 @@ htmlElements.timer.addEventListener('click', function() {
     switchToMode(this.dataset.mode)/* доступ к елементу отрибута */
 });
 
+htmlElements.startBtn.addEventListener('click', timerStartButton);
+
+/* htmlElements.stopBtn.addEventListener('click', function(){
+}); */
+
+
+
+
 
 function removeHiddenButton(){
     htmlElements.startBtn.classList.remove('hidden');
@@ -45,7 +47,6 @@ function removeHiddenButton(){
 
 /* Часы */
 function onIntervalNextTick(){
-    
     const timeIn = new Date();
     /* так типо наверн правильней наверн и руки не оторвут ) */
     const hour = timeIn.getHours();
@@ -62,30 +63,26 @@ function onIntervalNextTick(){
     /* так конечно короче*/
     /* const timeStrung = timeIn.toTimeString(); *//* Date in string */
     /* const timeOut = timeStrung.split(' ')[0]; *//* dait in array, 00:00:00 - this 0=[0] element new array*/
-    htmlElements.output.innerText = timeOut;
-    
+    htmlElements.output.innerText = timeOut; 
 }
 
-/* Подменяем выходное значение output на ТАЙМЕР и обрано*/
-function modifyText(new_text) {
-    let output = htmlElements.output;
-    output.firstChild.nodeValue = new_text;    
-  }
 
-/* переработать это говно */
-  function starTimer(){
-    let d = new Date();
-    let t = d.toLocaleTimeString();
-    htmlElements.output.innerHTML = t;
+
+
+function timerStartButton(){
     const startTime = new Date().getTime();
-    const output = htmlElements.output;
-    const difference = (new Date().getTime() - startTime) / 1000;
-    let seconds = parseInt(difference % 60);
-    const minutes = parseInt((difference / 60) % 60);
-    if(seconds < 10){
-        seconds = '0' + seconds;
-    }
-    output.innerText = `${minutes}:${seconds}`;
+    function timerGo(){
+        let difference = (new Date().getTime() - startTime) / 1000;
+        let seconds = parseInt(difference % 60);
+        let minutes = parseInt((difference / 60) % 60);
+        let hours = parseInt(((difference / 60) % 60)/60 % 60);
+        if(seconds < 10){seconds = '0' + seconds;}
+        if(minutes < 10){minutes = '0' + minutes;}
+        if(hours < 10){hours = '0' + hours;}
+        htmlElements.output.innerText = `${hours}:${minutes}:${seconds}`;
+        setTimeout(timerGo, 1000);
+    } 
+    timerGo();
 }
 
 
@@ -102,24 +99,22 @@ function remooveSelected(valueTabs){
 
 
 function switchToMode(mode) {
-    debugger;
     switch (mode) {
       case 'clock':
-           addSelected(htmlElements.clock);
-           addHiddenButton();
-           modifyText(onIntervalNextTick());
-           setInterval(onIntervalNextTick, 1000);
-           stopTimerClokc(myInterval);
+            addSelected(htmlElements.clock);
+            addHiddenButton();
+            debugger;
+            clearTimeout(startTimeInterval);
         break;
       case 'stopwatch':
             addSelected(htmlElements.stopwatch);
             removeHiddenButton();
-            modifyText(starTimer());
-            setInterval(starTimer, 1000);
-            stopTimerClokc(timer);
+            htmlElements.output.innerText = '00:00:00';
+            clearTimeout(startClockInterval);
         break;
       case 'timer':
             addSelected(htmlElements.timer);
         break;
     }
   }
+

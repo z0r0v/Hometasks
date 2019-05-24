@@ -75,7 +75,7 @@ function Projector(trademark, model, quality){
 }
 
 Projector.prototype.readMakeModelProjector = function(){
-    const branText = `Device mark`;
+    const branText = "Device mark";
     const modelText = "model";
     const qualityText =  "quality";
     return `${branText}: ${this.trademark}, ${modelText}: ${this.model}, ${qualityText}: ${this.quality}.`;
@@ -94,7 +94,7 @@ function Table(manufacturer, color,type){
 const table = new Table("Ikea","wenge","office");
 
 Table.prototype.pushShelf = function(){
-    const shelf = `Push shelf`;
+    const shelf = "Push shelf";
     return shelf;
 }
 /* Выдвигаем полку стола */
@@ -110,7 +110,7 @@ function Sensei(senName, senLastName, qualification, character){
 const sensei = new Sensei("Yury", "Tatsenka", "Full stack web developer", "vigorous");
 
 Sensei.prototype.answerStupidQuestions = function(){
-    const speak = `Who doesn\'t understand?`;
+    const speak = "Who doesn\'t understand?";
     return speak;
 }
 /* Сенсей спросил кому че не понятно ?*/
@@ -124,7 +124,7 @@ function Computer(monitor, cropus){
 const computer = new Computer("17\"", "Tower")
 
 Computer.prototype.runningWindows = function(){
-   return `Running windows`;
+   return "Running windows";
 }
 /* компьютер запустил винду */
 computer.runningWindows();
@@ -139,10 +139,10 @@ function VideoCard(graphicsProcessor, typeVideoMemory, videoMemoryBus, cooling){
 const videoCard = new VideoCard("GeForce 9500 GT", "GDDR5", "32bit", "active");
 
 VideoCard.prototype.videoCardSpecificationsOnScreen = function(){
-        const produced = `Produced by`;
+        const produced = "Produced by";
         let producedСountry;
         const model = "model";
-        const memoryType = `memory type`;
+        const memoryType = "memory type";
         const power = "power";
         const type = "type";
         if(this.graphicsProcessor = "GeForce 9500 GT")
