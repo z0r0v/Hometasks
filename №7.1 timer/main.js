@@ -1,6 +1,4 @@
 const startClockInterval = setInterval(onIntervalNextTick, 1000);
-const startTimeInterval = setTimeout(timerStartButton, 1000);
-clearInterval(startTimeInterval);
 
 const htmlElements = {};
 htmlElements.startBtn = document.querySelector('.container .buttons button.start');
@@ -26,8 +24,8 @@ htmlElements.timer.addEventListener('click', function() {
 
 htmlElements.startBtn.addEventListener('click', timerStartButton);
 
-/* htmlElements.stopBtn.addEventListener('click', function(){
-}); */
+htmlElements.stopBtn.addEventListener('click', function(){
+});
 
 
 
@@ -79,10 +77,10 @@ function timerStartButton(){
         if(seconds < 10){seconds = '0' + seconds;}
         if(minutes < 10){minutes = '0' + minutes;}
         if(hours < 10){hours = '0' + hours;}
-        htmlElements.output.innerText = `${hours}:${minutes}:${seconds}`;
-        setTimeout(timerGo, 1000);
+        htmlElements.output.innerText = `${hours}:${minutes}:${seconds}`;   
+        
     } 
-    timerGo();
+    let startTimeInterval = setInterval(timerGo, 1000);
 }
 
 
@@ -103,8 +101,8 @@ function switchToMode(mode) {
       case 'clock':
             addSelected(htmlElements.clock);
             addHiddenButton();
-            debugger;
             clearTimeout(startTimeInterval);
+            setInterval(onIntervalNextTick, 1000);
         break;
       case 'stopwatch':
             addSelected(htmlElements.stopwatch);
