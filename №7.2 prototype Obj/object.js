@@ -28,7 +28,7 @@ const charAud = new CharAud("2.5m", "5m", "5m", "57");
 charAud.cheNameTeacherInNameplate("Yriy");/*  */
 
 
-function WindowCharacter (fiveChamberProfile, doubleGlazingThickness, sealColor){
+function WindowCharacter(fiveChamberProfile, doubleGlazingThickness, sealColor){
     this.fiveChamberProfile = fiveChamberProfile;
     this.doubleGlazingThickness = doubleGlazingThickness;
     this.sealColor = sealColor;
@@ -138,21 +138,18 @@ function VideoCard(graphicsProcessor, typeVideoMemory, videoMemoryBus, cooling){
 const videoCard = new VideoCard("GeForce 9500 GT", "GDDR5", "32bit", "active");
 
 VideoCard.prototype.videoCardSpecificationsOnScreen = function(){
-        const produced = `Produced by: `;
+        const produced = `Produced by`;
         let producedСountry;
-        const model = `, model: `;
-        const memoryType = `, memory type: `;
-        const power = `, power: `;
-        const type = `, type: `;
+        const model = `model`;
+        const memoryType = `memory type`;
+        const power = `power`;
+        const type = `type`;
         if(this.graphicsProcessor = "GeForce 9500 GT")
             producedСountry = "Taiwan";
-    return`${produced}` + producedСountry + 
-    `${model}` + this.graphicsProcessor +
-    `${memoryType}` + this.typeVideoMemory +
-    `${power}` + this.videoMemoryBus +
-    `${type}` + this.cooling +'.';
+    return `${produced}: ${producedСountry}, ${model}: ${this.graphicsProcessor}, ${memoryType}: ${this.typeVideoMemory}, ${power}: ${this.videoMemoryBus}, ${type}: ${this.cooling}.`;
 }
 videoCard.videoCardSpecificationsOnScreen();
+console.log(videoCard.videoCardSpecificationsOnScreen());
 
 audience57.charAud = charAud;
 audience57.windowCharacter = windowCharacter;
