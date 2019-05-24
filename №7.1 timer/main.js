@@ -1,4 +1,12 @@
 const timer = setInterval(onIntervalNextTick, 1000);/* timeOute*/
+const myInterval = setInterval(starTimer, 1000); /* timeOute timer*/
+
+stopTimerClokc(myInterval);
+
+function stopTimerClokc(time){
+    clearTimeout(time);
+}
+
 
 const htmlElements = {};
 htmlElements.startBtn = document.querySelector('.container .buttons button.start');
@@ -17,8 +25,6 @@ htmlElements.clock.addEventListener('click', function() {
 htmlElements.stopwatch.addEventListener('click', function() {
     switchToMode(this.dataset.mode)
 });
-/* Клик по стоп вотч */
-htmlElements.stopwatch.addEventListener('click', chengeTimeToTimer);
 
 htmlElements.timer.addEventListener('click', function() {
     switchToMode(this.dataset.mode)/* доступ к елементу отрибута */
@@ -37,14 +43,51 @@ function removeHiddenButton(){
     htmlElements.resetBtn.classList.add('hidden');
   }
 
-
+/* Часы */
 function onIntervalNextTick(){
+    
     const timeIn = new Date();
-    const timeStrung = timeIn.toTimeString();/* Date in string */
-    const timeOut = timeStrung.split(' ')[0];/* dait in array, 00:00:00 - this 0=[0] element new array*/
+    /* так типо наверн правильней наверн и руки не оторвут ) */
+    const hour = timeIn.getHours();
+    let minutes = timeIn.getMinutes();
+    let seconds = timeIn.getSeconds();
+    minutes = checkTime(minutes);
+    seconds = checkTime(seconds);
+    function checkTime(i){
+        if (i<10){i="0" + i;
+    }
+    return i;
+    }
+    const timeOut = `${hour}:${minutes}:${seconds}`;
+    /* так конечно короче*/
+    /* const timeStrung = timeIn.toTimeString(); *//* Date in string */
+    /* const timeOut = timeStrung.split(' ')[0]; *//* dait in array, 00:00:00 - this 0=[0] element new array*/
     htmlElements.output.innerText = timeOut;
     
 }
+
+/* Подменяем выходное значение output на ТАЙМЕР и обрано*/
+function modifyText(new_text) {
+    let output = htmlElements.output;
+    output.firstChild.nodeValue = new_text;    
+  }
+
+
+  function starTimer(){
+    let d = new Date();
+    let t = d.toLocaleTimeString();
+    htmlElements.output.innerHTML = t;
+    const startTime = new Date().getTime();
+    const output = htmlElements.output;
+    const difference = (new Date().getTime() - startTime) / 1000;
+    let seconds = parseInt(difference % 60);
+    const minutes = parseInt((difference / 60) % 60);
+    if(seconds < 10){
+        seconds = '0' + seconds;
+    }
+    output.innerText = `${minutes}:${seconds}`;
+}
+
 
 function addSelected(valueTabs){
     remooveSelected(htmlElements.clock);
@@ -59,41 +102,24 @@ function remooveSelected(valueTabs){
 
 
 function switchToMode(mode) {
+    debugger;
     switch (mode) {
       case 'clock':
            addSelected(htmlElements.clock);
-           onIntervalNextTick();
-           setInterval(onIntervalNextTick, 1000);
-           /* Тут дебажим */
-           /* clearTimeout(myInterval); *//* Стоп интервал не стработал */
            addHiddenButton();
-           
-
+           modifyText(onIntervalNextTick());
+           setInterval(onIntervalNextTick, 1000);
+           stopTimerClokc(myInterval);
         break;
       case 'stopwatch':
             addSelected(htmlElements.stopwatch);
-            clearTimeout(timer);
+            removeHiddenButton();
+            modifyText(starTimer());
+            setInterval(starTimer, 1000);
+            stopTimerClokc(timer);
         break;
       case 'timer':
             addSelected(htmlElements.timer);
         break;
     }
-  }
-
-  function chengeTimeToTimer(){
-      
-   /*  const startTime = new Date().getTime();
-    const myInterval = setInterval(Timer, 1000);
-    const output = htmlElements.output;
-        function Timer(){
-            const difference = (new Date().getTime() - startTime) / 1000;
-            let seconds = parseInt(difference % 60);
-            const minutes = parseInt((difference / 60) % 60);
-            if(seconds < 10){
-                seconds = '0' + seconds;
-            }
-            output.innerText = `${minutes}:${seconds}`;
-        }
- */
-        removeHiddenButton();
   }
