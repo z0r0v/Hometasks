@@ -4,8 +4,9 @@ import {WindowCharacter} from "./windowCharacter.js";
 import {Door} from "./door.js";
 import {Projector} from "./projector.js";
 import {Table} from "./table.js";
-import {Sensei} from "./sensei";
-import {Computer} from "./Computer";
+import {Sensei} from "./sensei.js";
+import {Computer} from "./computer.js";
+import {VideoCard} from "./videoCard.js";
 
 
 
@@ -48,26 +49,6 @@ const computer = new Computer("17\"", "Tower");
 computer.runningWindows();
 
 
-function VideoCard(graphicsProcessor, typeVideoMemory, videoMemoryBus, cooling){
-    this.graphicsProcessor = graphicsProcessor;
-    this.typeVideoMemory = typeVideoMemory;
-    this.videoMemoryBus = videoMemoryBus;
-    this.cooling = cooling;
-}
-
-
-VideoCard.prototype.videoCardSpecificationsOnScreen = function(){
-        const produced = "Produced by";
-        let producedСountry;
-        const model = "model";
-        const memoryType = "memory type";
-        const power = "power";
-        const type = "type";
-        if(this.graphicsProcessor = "GeForce 9500 GT")
-            producedСountry = "Taiwan";
-    return `${produced}: ${producedСountry}, ${model}: ${this.graphicsProcessor}, ${memoryType}: ${this.typeVideoMemory}, ${power}: ${this.videoMemoryBus}, ${type}: ${this.cooling}.`;
-}
-
 const videoCard = new VideoCard("GeForce 9500 GT", "GDDR5", "32bit", "active");
 videoCard.videoCardSpecificationsOnScreen();
 
@@ -79,3 +60,4 @@ audience57.table = table;
 audience57.sensei = sensei;
 computer.videoCard = videoCard;
 audience57.computer = computer;
+console.log(audience57);
