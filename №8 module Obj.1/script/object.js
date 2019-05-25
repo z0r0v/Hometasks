@@ -8,11 +8,10 @@ import {Sensei} from "./sensei.js";
 import {Computer} from "./computer.js";
 import {VideoCard} from "./videoCard.js";
 
-
-
 const audience57 = new Audience57(0);/* Создано помещение  задан парметр проветривания 0*/
 audience57.timeAir(5);/* Проветрили 5 минут*/
 audience57.timeAir(5);/* Проветрили еще раз 5 минут итого оно проветривалось 10минут*/
+
 
 /* Создание обьекта с характеристиками для аудитории 57 */
 const charAud = new CharAud("2.5m", "5m", "5m", "57");
@@ -34,6 +33,7 @@ const projector = new Projector("Philips", "PPX 4835", "HD 720p");
 /* Читаем свойства проэктора или он сам читает, умный такой проектор))*/
 projector.readMakeModelProjector();
 
+
 const table = new Table("Ikea","wenge","office");
 /* Выдвигаем полку стола */
 table.pushShelf();
@@ -52,6 +52,7 @@ computer.runningWindows();
 const videoCard = new VideoCard("GeForce 9500 GT", "GDDR5", "32bit", "active");
 videoCard.videoCardSpecificationsOnScreen();
 
+
 audience57.charAud = charAud;
 audience57.windowCharacter = windowCharacter;
 audience57.door = door;
@@ -60,4 +61,5 @@ audience57.table = table;
 audience57.sensei = sensei;
 computer.videoCard = videoCard;
 audience57.computer = computer;
+
 console.log(audience57);
