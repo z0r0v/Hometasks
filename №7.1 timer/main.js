@@ -1,4 +1,5 @@
-const startClockInterval = setInterval(onIntervalNextTick, 1000);
+let startClockInterval = setInterval(onIntervalNextTick, 1000);
+let startTimeInterval;
 
 const htmlElements = {};
 htmlElements.startBtn = document.querySelector('.container .buttons button.start');
@@ -25,6 +26,7 @@ htmlElements.timer.addEventListener('click', function() {
 htmlElements.startBtn.addEventListener('click', timerStartButton);
 
 htmlElements.stopBtn.addEventListener('click', function(){
+    clearTimeout(startTimeInterval);
 });
 
 
@@ -64,12 +66,11 @@ function onIntervalNextTick(){
     htmlElements.output.innerText = timeOut; 
 }
 
-
-
+let timerGo;
 
 function timerStartButton(){
     const startTime = new Date().getTime();
-    function timerGo(){
+    timerGo = function (){
         let difference = (new Date().getTime() - startTime) / 1000;
         let seconds = parseInt(difference % 60);
         let minutes = parseInt((difference / 60) % 60);
@@ -80,7 +81,7 @@ function timerStartButton(){
         htmlElements.output.innerText = `${hours}:${minutes}:${seconds}`;   
         
     } 
-    let startTimeInterval = setInterval(timerGo, 1000);
+    startTimeInterval = setInterval(timerGo, 1000);
 }
 
 
@@ -102,13 +103,16 @@ function switchToMode(mode) {
             addSelected(htmlElements.clock);
             addHiddenButton();
             clearTimeout(startTimeInterval);
-            setInterval(onIntervalNextTick, 1000);
+            startClockInterval = setInterval(onIntervalNextTick, 1000);
+
         break;
       case 'stopwatch':
             addSelected(htmlElements.stopwatch);
             removeHiddenButton();
             htmlElements.output.innerText = '00:00:00';
             clearTimeout(startClockInterval);
+            startTimeInterval = setInterval(timerGo, 1000);
+
         break;
       case 'timer':
             addSelected(htmlElements.timer);
