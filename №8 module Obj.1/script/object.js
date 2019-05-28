@@ -21,7 +21,7 @@ charAud.changeNameOndoor("Yriy");/*  */
 /* создали окно */
 const windowCharacter = new WindowCharacter("71mm", "40mm", "Gray");
 /* Открыли окно на проветривание */
-windowCharacter.doWindowOpening("up");
+windowCharacter.openWindow("up");
 
 
 const door = new Door("wood", "tupai");

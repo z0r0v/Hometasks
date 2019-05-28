@@ -4,7 +4,7 @@ function WindowCharacter(fiveChamberProfile, doubleGlazingThickness, sealColor){
     this.sealColor = sealColor;
 }
 /* Действия производимые с окном */
-WindowCharacter.prototype.doWindowOpening = function(handlePosition){
+WindowCharacter.prototype.openWindow = function(handlePosition){
     switch (handlePosition){
         case 'up':
             return "ventilation";
