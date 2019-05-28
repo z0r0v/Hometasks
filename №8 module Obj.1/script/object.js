@@ -9,8 +9,8 @@ import {Computer} from "./computer.js";
 import {VideoCard} from "./videoCard.js";
 
 const audience57 = new Audience57(0);/* Создано помещение  задан парметр проветривания 0*/
-audience57.doAiring(5);/* Проветрили 5 минут*/
-audience57.doAiring(5);/* Проветрили еще раз 5 минут итого оно проветривалось 10минут*/
+audience57.ventilate(5);/* Проветрили 5 минут*/
+audience57.ventilate(5);/* Проветрили еще раз 5 минут итого оно проветривалось 10минут*/
 
 
 /* Создание обьекта с характеристиками для аудитории 57 */
@@ -31,7 +31,7 @@ door.openDoor();
 
 const projector = new Projector("Philips", "PPX 4835", "HD 720p");
 /* Читаем свойства проэктора или он сам читает, умный такой проектор))*/
-projector.showСharacteristics();
+projector.showFeatures();
 
 
 const table = new Table("Ikea","wenge","office");
@@ -46,7 +46,7 @@ sensei.anwserQuestions();
 
 const computer = new Computer("17\"", "Tower");
 /* компьютер запустил винду */
-computer.runningWindows();
+computer.runSystem();
 
 
 const videoCard = new VideoCard("GeForce 9500 GT", "GDDR5", "32bit", "active");
