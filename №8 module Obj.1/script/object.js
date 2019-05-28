@@ -16,7 +16,7 @@ audience57.doAiring(5);/* Проветрили еще раз 5 минут ито
 /* Создание обьекта с характеристиками для аудитории 57 */
 const charAud = new CharAud("2.5m", "5m", "5m", "57");
 /* Изменение имени на таблички в характеристиках аудитории 57 */
-charAud.doCheNameTeacherInNameplate("Yriy");/*  */
+charAud.changeNameOndoor("Yriy");/*  */
 
 /* создали окно */
 const windowCharacter = new WindowCharacter("71mm", "40mm", "Gray");
@@ -26,31 +26,31 @@ windowCharacter.doWindowOpening("up");
 
 const door = new Door("wood", "tupai");
 /* Открыли двер она издала звук */
-door.doDoorOpening();
+door.openDoor();
 
 
 const projector = new Projector("Philips", "PPX 4835", "HD 720p");
 /* Читаем свойства проэктора или он сам читает, умный такой проектор))*/
-projector.doReadMakeModelProjector();
+projector.showСharacteristics();
 
 
 const table = new Table("Ikea","wenge","office");
 /* Выдвигаем полку стола */
-table.doPushShelf();
+table.pushShelf();
 
 
 const sensei = new Sensei("Yury", "Tatsenka", "Full stack web developer", "vigorous");
 /* Сенсей спросил кому че не понятно ?*/
-sensei.doAnswerStupidQuestions();
+sensei.anwserQuestions();
 
 
 const computer = new Computer("17\"", "Tower");
 /* компьютер запустил винду */
-computer.doRunningWindows();
+computer.runningWindows();
 
 
 const videoCard = new VideoCard("GeForce 9500 GT", "GDDR5", "32bit", "active");
-videoCard.doSpecificationsOnScreen();
+videoCard.showSpecification();
 
 
 audience57.charAud = charAud;

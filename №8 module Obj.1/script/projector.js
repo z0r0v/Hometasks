@@ -4,7 +4,7 @@ function Projector(trademark, model, quality){
     this.quality = quality;
 }
 
-Projector.prototype.doReadMakeModelProjector = function(){
+Projector.prototype.showСharacteristics = function(){
     const branText = "Device mark";
     const modelText = "model";
     const qualityText =  "quality";

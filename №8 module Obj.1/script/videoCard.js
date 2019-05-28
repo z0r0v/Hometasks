@@ -6,7 +6,7 @@ function VideoCard(graphicsProcessor, typeVideoMemory, videoMemoryBus, cooling){
 }
 
 
-VideoCard.prototype.doSpecificationsOnScreen = function(){
+VideoCard.prototype.showSpecification = function(){
         const produced = "Produced by";
         let producedСountry;
         const model = "model";

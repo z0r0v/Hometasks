@@ -6,7 +6,7 @@ function Sensei(senName, senLastName, qualification, character){
 }
 
 
-Sensei.prototype.doAnswerStupidQuestions = function(){
+Sensei.prototype.anwserQuestions = function(){
     const speak = "Who doesn\'t understand?";
     return speak;
 }

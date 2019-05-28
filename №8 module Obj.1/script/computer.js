@@ -4,7 +4,7 @@ function Computer(monitor, cropus){
 }
 
 
-Computer.prototype.doRunningWindows = function(){
+Computer.prototype.runningWindows = function(){
    return "Running windows";
 }
 export {Computer};
