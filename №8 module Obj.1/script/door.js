@@ -4,7 +4,7 @@ function Door(material, doorHandle){
 }
 
 
-Door.prototype.DoorOpening = function(){
+Door.prototype.doDoorOpening = function(){
     const open = `Makes a sound`;
     const sound = `Krch, Krch, Krch`;
     return `${open}: ${sound}`;

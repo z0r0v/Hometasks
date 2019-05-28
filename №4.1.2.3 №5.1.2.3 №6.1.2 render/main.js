@@ -92,7 +92,7 @@ function resset() {
 
 function deletteButtonCkicked(evt) {
   evt.stopPropagation();
-  let item = this.parentElement;
+  let item = this.parentElement;/* Возаращает к родителю на уровень выше */
   const itemElement = item.parentElement;
   const itemArray = Array.from(itemElement.querySelectorAll('div.item'));
   let index = itemArray.indexOf(item);

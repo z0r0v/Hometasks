@@ -5,7 +5,7 @@ function CharAud(ceilingHeight, roomLength, roomWidth, roomNumber){
     this.roomNumber = roomNumber;
 }
 
-CharAud.prototype.cheNameTeacherInNameplate = function(nameTeacher) {
+CharAud.prototype.doCheNameTeacherInNameplate = function(nameTeacher) {
     /* Конкатенация фразы в ковычках и имени на табличке */
     const great = `Great teacher`;
     this.nameTeacher = `${great} ${nameTeacher}`;

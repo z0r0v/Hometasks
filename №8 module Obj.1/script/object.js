@@ -9,48 +9,48 @@ import {Computer} from "./computer.js";
 import {VideoCard} from "./videoCard.js";
 
 const audience57 = new Audience57(0);/* Создано помещение  задан парметр проветривания 0*/
-audience57.timeAir(5);/* Проветрили 5 минут*/
-audience57.timeAir(5);/* Проветрили еще раз 5 минут итого оно проветривалось 10минут*/
+audience57.doAiring(5);/* Проветрили 5 минут*/
+audience57.doAiring(5);/* Проветрили еще раз 5 минут итого оно проветривалось 10минут*/
 
 
 /* Создание обьекта с характеристиками для аудитории 57 */
 const charAud = new CharAud("2.5m", "5m", "5m", "57");
 /* Изменение имени на таблички в характеристиках аудитории 57 */
-charAud.cheNameTeacherInNameplate("Yriy");/*  */
+charAud.doCheNameTeacherInNameplate("Yriy");/*  */
 
 /* создали окно */
 const windowCharacter = new WindowCharacter("71mm", "40mm", "Gray");
 /* Открыли окно на проветривание */
-windowCharacter.windowOpening("up");
+windowCharacter.doWindowOpening("up");
 
 
 const door = new Door("wood", "tupai");
 /* Открыли двер она издала звук */
-door.DoorOpening();
+door.doDoorOpening();
 
 
 const projector = new Projector("Philips", "PPX 4835", "HD 720p");
 /* Читаем свойства проэктора или он сам читает, умный такой проектор))*/
-projector.readMakeModelProjector();
+projector.doReadMakeModelProjector();
 
 
 const table = new Table("Ikea","wenge","office");
 /* Выдвигаем полку стола */
-table.pushShelf();
+table.doPushShelf();
 
 
 const sensei = new Sensei("Yury", "Tatsenka", "Full stack web developer", "vigorous");
 /* Сенсей спросил кому че не понятно ?*/
-sensei.answerStupidQuestions();
+sensei.doAnswerStupidQuestions();
 
 
 const computer = new Computer("17\"", "Tower");
 /* компьютер запустил винду */
-computer.runningWindows();
+computer.doRunningWindows();
 
 
 const videoCard = new VideoCard("GeForce 9500 GT", "GDDR5", "32bit", "active");
-videoCard.videoCardSpecificationsOnScreen();
+videoCard.doSpecificationsOnScreen();
 
 
 audience57.charAud = charAud;

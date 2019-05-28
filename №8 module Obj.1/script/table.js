@@ -5,7 +5,7 @@ function Table(manufacturer, color,type){
 }
 
 
-Table.prototype.pushShelf = function(){
+Table.prototype.doPushShelf = function(){
     const shelf = "Push shelf";
     return shelf;
 }
