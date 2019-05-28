@@ -16,7 +16,7 @@ audience57.doAiring(5);/* Проветрили еще раз 5 минут ито
 /* Создание обьекта с характеристиками для аудитории 57 */
 const charAud = new CharAud("2.5m", "5m", "5m", "57");
 /* Изменение имени на таблички в характеристиках аудитории 57 */
-charAud.changeNameOndoor("Yriy");/*  */
+charAud.changeNameOnDoor("Yriy");/*  */
 
 /* создали окно */
 const windowCharacter = new WindowCharacter("71mm", "40mm", "Gray");

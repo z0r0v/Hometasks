@@ -5,7 +5,7 @@ function CharAud(ceilingHeight, roomLength, roomWidth, roomNumber){
     this.roomNumber = roomNumber;
 }
 
-CharAud.prototype.changeNameOndoor = function(nameTeacher) {
+CharAud.prototype.changeNameOnDoor = function(nameTeacher) {
     /* Конкатенация фразы в ковычках и имени на табличке */
     const great = `Great teacher`;
     this.nameTeacher = `${great} ${nameTeacher}`;
