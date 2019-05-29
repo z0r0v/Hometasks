@@ -70,13 +70,11 @@ function Calculator(value1, value2){
 
 
 /* 8 */
-let a;
 
-function isNumber (value){
+function isNumber(value){
     return value !== null && value !== undefined && value !== !isNaN(value) && value.trim() !== '';
 }
 /* не понимаю по чему не работает */
-
 console.log(isNumber(123));
 
 /* 9 */
