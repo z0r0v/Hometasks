@@ -72,16 +72,12 @@ function Calculator(value1, value2){
 /* 8 */
 let a;
 
-function control (a){
-    if (a !== null && a !== undefined && a !== !isNaN && a.trim !== '') {
-        return true;
-    } else {
-        return false;
-    }
+function isNumber (value){
+    return value !== null && value !== undefined && value !== !isNaN(value) && value.trim() !== '';
 }
 /* не понимаю по чему не работает */
 
-console.log(control ('adsf'));
+console.log(isNumber(123));
 
 /* 9 */
 
