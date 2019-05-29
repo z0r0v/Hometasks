@@ -1,16 +1,16 @@
 /* 2 */
-/* let a ={age:'22'};
-let b = a;
-b.age = 11;
-console.log(a.age); */
+let c = {age:'22'};
+let d = c;
+d.age = 11;
+console.log(c.age);
 /* В первом верно */
 
 /* 3 */
-/* const object = ['car, man'];
-let a = 'great';
-object[0] = `${a} track`;
+const object = ['car, man'];
+let g = 'great';
+object[0] = `${g} track`;
 let newObject = ['flowers', true];
-object = newObject; */
+/* object = newObject; */ 
 /* не верно пытаемся присвоит обьекту нонстанта новое значение в 11 стр  а не в 9 как я указал*/
 
 /* 4 */
@@ -26,7 +26,6 @@ array.splice(3,1);
 console.log(array);/* Правильно */
 
 /* 5 */
-/* В задании 5 забыл обьявить обьекты  там короче все не правильно ))*/
 let finger1, finger2, finger3, finger4, finger5;
 let left = {};
 let rihgt ={};
@@ -36,7 +35,6 @@ let finger = {finger1, finger2, finger3, finger4, finger5};
 let legs = {left, rihgt};
 let head = {};
 let body = {};
-
 hunan.hands = hands;
 hunan.legs = legs;
 hunan.head = head;
@@ -45,8 +43,8 @@ legs.left.finger = finger;
 legs.rihgt.finger = finger;
 hands.left.finger = finger;
 hands.rihgt.finger = finger;
-
 console.log(hunan);
+/* В задании 5 забыл обьявить обьекты  там короче все не правильно ))*/
 
 /* 6 */
 function Calculator(value1, value2){
@@ -60,47 +58,46 @@ function Calculator(value1, value2){
 
  /* 7 */
 
- /* let a;
+ let a;
  let b;
  a = '3';
  b = 3;
  console.log(a==b);
- console.log(a===b); */
+ console.log(a===b);
 /* Все было верно */
 
 
 /* 8 */
 
-function isNumber(value){
+/* function isNumber(value){
     return value !== null && value !== undefined && value !== !isNaN(value) && value.trim() !== '';
 }
+isNumber(123); */
 /* не понимаю по чему не работает */
-console.log(isNumber(123));
 
 /* 9 */
 
-/* let button = document.querySelector('button.myButton');
-button.addEventListener('click',clicked);
+let buttonClick = document.querySelector('button.myButton');
+buttonClick.addEventListener('click',clicked);
 function clicked() {
  console.log(this.dataset.name);
-} */
+}
 /* Почти правильно забыл там указать кое что( */
 
     /* 10 */
-
-    let item = document.createElement('div.item');
-    item.style.backgroundColor = 'yellow';
-    document.getElementById('.output').appendChild(item);
-
+    let output = document.getElementById('output');
+    let item = document.createElement('div');
     let span = document.createElement('span');
-    span.innerHTML = 'blakc';
-    document.querySelector('div.item').appendChild(item);
-
     let button = document.createElement('button');
-    span.innerHTML = 'X';
-    document.querySelector('div.item').appendChild(item);
+    item.classList.add("item");
+    item.style.width = "65px";
+    item.style.backgroundColor = 'yellow';
+    span.innerHTML = 'blakc';    
+    button.innerHTML = 'X';
 
-
+    output.appendChild(item);
+    item.appendChild(span);
+    item.appendChild(button);
 
 
 
