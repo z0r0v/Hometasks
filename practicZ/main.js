@@ -85,20 +85,28 @@ console.log(control ('adsf'));
 
 /* 9 */
 
-let button = document.querySelector('button.myButton');
+/* let button = document.querySelector('button.myButton');
 button.addEventListener('click',clicked);
 function clicked() {
  console.log(this.dataset.name);
-}
+} */
 /* Почти правильно забыл там указать кое что( */
 
     /* 10 */
 
     let item = document.createElement('div.item');
     item.style.backgroundColor = 'yellow';
-    document.querySelector('div.output').appendChild(item);
+    document.getElementById('.output').appendChild(item);
 
-    
+    let span = document.createElement('span');
+    span.innerHTML = 'blakc';
+    document.querySelector('div.item').appendChild(item);
+
+    let button = document.createElement('button');
+    span.innerHTML = 'X';
+    document.querySelector('div.item').appendChild(item);
+
+
 
 
 
