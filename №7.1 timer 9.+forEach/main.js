@@ -1,5 +1,5 @@
-import {Clock} from "./module/clock.js";
-import {tabs} from "./module/tabs.js";
+import {Clock} from "./module/clock.js.js";
+import {tabs} from "./module/tabs.js.js";
 
 htmlElements.clock.addEventListener('click', function() {
     switchToMode(this.dataset.mode)

@@ -1,4 +1,4 @@
-import {htmlElements} from "./htmlElements.js";
+import {htmlElements} from "./htmlElements.js.js";
 
 function Tabs(){}
 
