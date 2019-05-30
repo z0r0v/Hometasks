@@ -8,9 +8,10 @@ import {Sensei} from "./sensei.js";
 import {Computer} from "./computer.js";
 import {VideoCard} from "./videoCard.js";
 
-const audience57 = new Audience57(0);/* Создано помещение  задан парметр проветривания 0*/
+const audience57 = new Audience57(0, 30, 15);/* Создано помещение  задан парметр проветривания 0*/
 audience57.ventilate(5);/* Проветрили 5 минут*/
 audience57.ventilate(5);/* Проветрили еще раз 5 минут итого оно проветривалось 10минут*/
+audience57.checkAvailablePlaces(30, 15);/* Определил колличество вакантных мест в аудитории*/
 
 
 /* Создание обьекта с характеристиками для аудитории 57 */
