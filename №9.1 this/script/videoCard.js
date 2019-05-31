@@ -25,8 +25,9 @@ VideoCard.prototype.showSpecification = function(){
         const memoryType = "memory type";
         const power = "power";
         const type = "type";
-        if(this.graphicsProcessor = "GeForce 9500 GT")
+        if(this.graphicsProcessor === "GeForce 9500 GT") {
             producedСountry = "Taiwan";
+        }
     return `${produced}: ${producedСountry}, ${model}: ${this.graphicsProcessor}, ${memoryType}: ${this.typeVideoMemory}, ${power}: ${this.videoMemoryBus}, ${type}: ${this.cooling}.`;
 }
 export {VideoCard};
