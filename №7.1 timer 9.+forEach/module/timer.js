@@ -1,4 +1,6 @@
-import {htmlElements} from "./htmlElements.js";
+const htmlElements = {
+    output:document.querySelector('.container [data-mode = "timer"] .output')
+};
 
 let timerGo;
 function timerStartButton(){
@@ -15,4 +17,14 @@ function timerStartButton(){
     } 
     startTimeInterval = setInterval(timerGo, 1000);
 }
-export {timerStartButton};
+
+function Timer(){};
+
+/* тут нужно подумать */
+/* Timer.prototype.init = function() {
+    setInterval(timerStartButton, 1000);
+    timerStartButton();
+};
+ */
+
+export {Timer};
