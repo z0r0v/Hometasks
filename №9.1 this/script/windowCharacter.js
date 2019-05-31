@@ -8,7 +8,7 @@ function WindowCharacter(fiveChamberProfile, doubleGlazingThickness, sealColor){
      /* создаю новое свойство и инициирую его любым значением */
      this.pressureInsideGlasses = 2;
      /* инициализурую переменную функциональным выражением */
-     let closeWindow = function() {
+     const closeWindow = function() {
         return "closing";
      }
      /* на основе функц. выраж.  создаю новый метод*/
@@ -21,13 +21,10 @@ WindowCharacter.prototype.openWindow = function(handlePosition){
     switch (handlePosition){
         case 'up':
             return "ventilation";
-            break;
         case 'horizontally':
             return "full opening";
-            break;
         case 'down':
             return "closing";
-            break;
         default:
             return "Window closed";
     }

@@ -6,7 +6,7 @@ function Audience57(timeAir){
     this.lux = 400;
     this.illumination = `${this.lux}lx`;
     /* инициализурую переменную функциональным выражением */
-    let checkAvailablePlaces = function(chairs, people) {
+    const checkAvailablePlaces = function(chairs, people) {
         return chairs - people;
     }
     /* на основе функц. выраж.  создаю новый метод*/

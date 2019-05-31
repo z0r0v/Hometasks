@@ -6,7 +6,7 @@ function Projector(trademark, model, quality){
     /* создаю новое свойство и инициирую его любым значением */
     this.operationTime = 2;
     /* инициализурую переменную функциональным выражением */
-    let showTimeOperation = function() {
+    const showTimeOperation = function() {
         let time = this.operationTime;
         return `${time} h`;
     }

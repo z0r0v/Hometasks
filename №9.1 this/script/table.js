@@ -6,7 +6,7 @@ function Table(manufacturer, color, type){
      /* создаю новое свойство и инициирую его любым значением */
      this.numberShelves = 2;
      /* инициализурую переменную функциональным выражением */
-     let closeShelf = function() {
+     const closeShelf = function() {
          return "The shelf closes smoothly";
      }
      /* на основе функц. выраж.  создаю новый метод*/

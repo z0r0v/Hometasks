@@ -5,7 +5,7 @@ function Door(material, doorHandle){
     /* создаю новое свойство и инициирую его любым значением */
     this.typeHinge = "on top";
     /* инициализурую переменную функциональным выражением */
-    let doorClose = function() {
+    const doorClose = function() {
         return  `Krch, Krch, Krch`;
     }
     /* на основе функц. выраж.  создаю новый метод*/

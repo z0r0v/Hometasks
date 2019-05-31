@@ -7,7 +7,7 @@ function Sensei(senName, senLastName, qualification, character){
     /* создаю новое свойство и инициирую его любым значением */
     this.shirtСolor = "blue";
     /* инициализурую переменную функциональным выражением */
-    let cheerUpSensei = function(scoreOnTheStandings) {
+    const cheerUpSensei = function(scoreOnTheStandings) {
         let cheer = 5;
         if(scoreOnTheStandings >= 7) {
         cheer++;

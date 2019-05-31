@@ -5,7 +5,7 @@ function Computer(monitor, cropus){
     /* создаю новое свойство и инициирую его любым значением */
     this.processor = "Intel® Core™ i5";
     /* инициализурую переменную функциональным выражением */
-    let  processorWarmUp = function() {
+    const  processorWarmUp = function() {
         let temperature = 30;
         temperature + 20;
         return `${temperature}°`

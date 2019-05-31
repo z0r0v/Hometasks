@@ -5,9 +5,9 @@ function CharAud(ceilingHeight, roomLength, roomWidth, roomNumber){
     this.roomWidth = roomWidth;
     this.roomNumber = roomNumber;
     /* создаю новое свойство и инициирую его любым значением */
-    this.BrokenChairs = 1;
+    this.brokenChairs = 1;
     /* инициализурую переменную функциональным выражением */
-    let areaСount = function() {
+    const areaСount = function() {
         return this.roomLength * this.roomWidth;
     }
     /* на основе функц. выраж.  создаю новый метод*/
@@ -19,7 +19,7 @@ CharAud.prototype.changeNameOnDoor = function(nameTeacher) {
     const great = `Great teacher`;
     this.nameTeacher = `${great} ${nameTeacher}`;
     /* изменяю значение одного из свойств */
-    this.BrokenChairs = 2;
+    this.brokenChairs = 2;
 }
 
 export {CharAud};

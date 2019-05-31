@@ -8,11 +8,11 @@ function VideoCard(graphicsProcessor, typeVideoMemory, videoMemoryBus, cooling){
     /* создаю новое свойство и инициирую его любым значением */
     this.corePerformance = "1750 МГц";
     /* инициализурую переменную функциональным выражением */
-    let applicationRun = function() {
+    const runApplication = function() {
         return "Metro Exodus Run";
     }
     /* на основе функц. выраж.  создаю новый метод*/
-    this.applicationRun = applicationRun;
+    this.runApplication = runApplication;
 }
 
 
