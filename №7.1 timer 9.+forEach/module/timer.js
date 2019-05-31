@@ -1,6 +1,10 @@
 const htmlElements = {
-    output:document.querySelector('.container [data-mode = "timer"] .output')
+    output:document.querySelector('.container [data-mode = "timer"] .output'),
+    buttonStart:document.querySelector('.container [data-mode = "timer"] .buttons .start'),
+    buttonStop:document.querySelector('.container [data-mode = "timer"] .buttons .stop'),
+    buttonReset:document.querySelector('.container [data-mode = "timer"] .buttons .reset'),
 };
+
 
 let timerGo;
 function timerStartButton(){
@@ -21,10 +25,10 @@ function timerStartButton(){
 function Timer(){};
 
 /* тут нужно подумать */
-/* Timer.prototype.init = function() {
+Timer.prototype.init = function() {
     setInterval(timerStartButton, 1000);
     timerStartButton();
 };
- */
+
 
 export {Timer};
