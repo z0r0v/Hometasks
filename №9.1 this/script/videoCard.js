@@ -30,4 +30,5 @@ VideoCard.prototype.showSpecification = function(){
         }
     return `${produced}: ${producedСountry}, ${model}: ${this.graphicsProcessor}, ${memoryType}: ${this.typeVideoMemory}, ${power}: ${this.videoMemoryBus}, ${type}: ${this.cooling}.`;
 }
+
 export {VideoCard};

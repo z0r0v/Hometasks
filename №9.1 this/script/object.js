@@ -53,7 +53,6 @@ computer.runSystem();
 const videoCard = new VideoCard("GeForce 9500 GT", "GDDR5", "32bit", "active");
 videoCard.showSpecification();
 
-
 audience57.charAud = charAud;
 audience57.windowCharacter = windowCharacter;
 audience57.door = door;
