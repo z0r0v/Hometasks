@@ -1,68 +1,14 @@
-import {Clock} from "./module/clock.js.js";
-import {tabs} from "./module/tabs.js.js";
-
-htmlElements.clock.addEventListener('click', function() {
-    switchToMode(this.dataset.mode)
-});
-
-htmlElements.stopwatch.addEventListener('click', function() {
-    switchToMode(this.dataset.mode)
-});
-
-htmlElements.timer.addEventListener('click', function() {
-    switchToMode(this.dataset.mode)/* доступ к елементу отрибута */
-});
-
-htmlElements.startBtn.addEventListener('click', timerStartButton);
-
-htmlElements.stopBtn.addEventListener('click', function(){
-    clearTimeout(startTimeInterval);
-});
+import {Clock} from "./module/clock.js";
+import {Tabs} from "./module/tabs.js";
 
 
-function removeHiddenButton(){
-    htmlElements.startBtn.classList.remove('hidden');
-    htmlElements.stopBtn.classList.remove('hidden');
-    htmlElements.resetBtn.classList.remove('hidden');
-  }
-
-  function addHiddenButton(){
-    htmlElements.startBtn.classList.add('hidden');
-    htmlElements.stopBtn.classList.add('hidden');
-    htmlElements.resetBtn.classList.add('hidden');
-  }
+const clock = new Clock();
+const tabs = new Tabs();
 
 
-function addSelected(valueTabs){
-    remooveSelected(htmlElements.clock);
-    remooveSelected(htmlElements.timer);
-    remooveSelected(htmlElements.stopwatch);
-    valueTabs.classList.add('selected');
+function init() {
+    clock.init();
+    tabs.init();
 }
 
-function remooveSelected(valueTabs){
-    valueTabs.classList.remove('selected');
-}
-
-function switchToMode(mode) {
-    switch (mode) {
-      case 'clock':
-            addSelected(htmlElements.clock);
-            addHiddenButton();
-            clearTimeout(startTimeInterval);
-            startClockInterval = setInterval(onIntervalNextTick, 1000);
-
-        break;
-      case 'stopwatch':
-            addSelected(htmlElements.stopwatch);
-            removeHiddenButton();
-            htmlElements.output.innerText = '00:00:00';
-            clearTimeout(startClockInterval);
-            startTimeInterval = setInterval(timerGo, 1000);
-        break;
-      case 'timer':
-            addSelected(htmlElements.timer);
-        break;
-    }
-  }
-
+init();
