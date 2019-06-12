@@ -78,7 +78,7 @@ isNumber(123); */
 /* 9 */
 
 let buttonClick = document.querySelector('button.myButton');
-buttonClick.addEventListener('click',clicked);
+buttonClick.addEventListener('click', clicked);
 function clicked() {
  console.log(this.dataset.name);
 }
