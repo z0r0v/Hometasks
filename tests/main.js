@@ -1,5 +1,5 @@
 
-
+//Не могу получить доступ к методу slice на Obj или на newObj
 function Arr(){
   this[0] = 1;
   this[1] = 2;
@@ -16,6 +16,3 @@ let newArr = new Arr;
 let newObj = new Obj;
 
 console.dir([1,2,3]);
-
-
-// console.log(newArr);
