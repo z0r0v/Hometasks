@@ -1,0 +1,23 @@
+
+@import url('https://fonts.googleapis.com/css?family=Comfortaa&display=swap');
+
+@import 'css/header.css' screen;
+@import 'css/portfolio.css' screen;
+@import 'css/tasks.css' screen;
+@import 'css/footer.css' screen;
+@import 'css/skils.css' screen;
+@import 'css/experience.css' screen;
+@import 'css/slider.css' screen;
+@import 'css/about.css' screen;
+
+
+*{
+  font-family: 'Comfortaa', cursive;
+}
+
+:root{
+  --main-color: rgba(0, 0, 0, 0.8);
+  --main-text:white;
+  --main--block:white;
+  --main--footer:white;
+}

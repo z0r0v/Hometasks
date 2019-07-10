@@ -7,12 +7,17 @@ function Arr(){
 }
 
 function Obj(){
-  let slice = function(){console.log(321);}
+  this.slice = function(){console.log(321);}
 }
 
 Arr.prototype = Object.create(Obj.prototype);
+Arr.prototype.constructor = Object.constructor;
 
 let newArr = new Arr;
 let newObj = new Obj;
 
 console.dir([1,2,3]);
+
+console.log(newObj);
+
+newObj.slice();
